@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: white;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: black;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -91,6 +91,7 @@
                     {{--<a href="https://forge.laravel.com">Forge</a>--}}
                     {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
                 </div>
+                <img src="http://clipart-library.com/image_gallery/n1494674.jpg" width="180" height="200">
             </div>
         </div>
     </body>
