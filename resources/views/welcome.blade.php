@@ -91,7 +91,9 @@
                     {{--<a href="https://forge.laravel.com">Forge</a>--}}
                     {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
                 </div>
-                <img src="http://clipart-library.com/image_gallery/n1494674.jpg" width="180" height="200">
+                
+                <img src="images/money-1.jpg.png" alt="Money image" height=200 width=400> </img>
+                
             </div>
         </div>
     </body>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Business marketing clipart - Clip Art Library</title>
+
+	
+	
+<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta content="follow, all" name="Googlebot-Image" />
+	<link href="../styles.css"  rel="stylesheet" type="text/css" />
+	<link href="../fonts.googleapis.com/css-family=Coiny-Unkempt-Work+Sans.css"  rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.png"  />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+
+
+
+
+    </head>
+<body id="page">
+
+
+
+
+
+<div id="headerc">
+  <div id="header">
+    <div class="logo">
+      <a href="/" ><img src="../logo.png" style="width: 100%;margin-top: 10px;"></a>
+    </div>
+
+  <span id="mobile-search"></span>
+  <script>
+    $(document).ready(function() {
+      $("#searchbox").submit(function(){
+        if($("#q").val() != "") {
+          $("#search").submit();
+        } else {
+          return false;
+        }
+      });
+    });
+  </script> 
+   <form id="searchbox" method="post" action="../search/">
+      <input type="text" name="search" id="q" placeholder="Search for cliparts..." />
+      <input type="submit" name="submit_s" value="Search" />
+    </form>
+
+		
+	
+    <br class="clear">
+
+  </div>
+</div>
+<script>
+    $("#mobile-search").click(function() {
+      $("#searchbox").toggle();
+    });
+   </script>
+
+   
+   <script>
+  function printed(id){
+    $.post("/printed", { id: id },
+       function(data) {
+       });
+  }
+  
+  function makepage(src, title){
+    return "<html>\n" +
+    "<head>\n" +
+    "<title>" + title + "</title>\n" +
+    "<script>\n" +
+    "function step1() {\n" +
+    " setTimeout('step2()', 10);\n" +
+    "}\n" +
+    "function step2() {\n" +
+    " window.print();\n" +
+    " window.close();\n" +
+    "}\n" +
+    "</scr" + "ipt>\n" +
+    "</head>\n" +
+    "<body onLoad='step1()'>\n" +
+    "<img src='" + src + "'/>\n" +
+    "</body>\n" +
+    "</html>\n";
+	
+  }
+  function printme(src, id, title){
+    
+    link = "about:blank";
+    var pw = window.open(link, "_new");
+    pw.document.open();
+    pw.document.write(makepage(src, title));
+    pw.document.close();
+    
+    printed(id);
+
+  }
+  </script>
+  
+  
+
+<div id="content">
+
+    <div id="sidebar" style="float: left;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Clip-4 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-1314328537653905"
+     data-ad-slot="8248622708"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+              
+          </div>
+
+
+
+  <div id="mainc" style="margin-top: 0px;float: right;">
+
+
+    <div id="pagebox" style="width: 730px;">
+
+
+            <img src="../image_gallery/n1494674.jpg" alt=Business marketing clipart style="max-height: 100%;max-width: 100%;height: 300px;"  />
+      <h1>Finance Manager Cliparts #3034318</h1>
+
+  <div id="meta">
+                <ul>
+          <li id="type">jpg</li>
+          <li id="dimensions">590x590</li>
+          <li>180.2 KB</li>
+        </ul>
+<br>
+<script type="text/javascript">
+var winwidth=(window.innerWidth)?window.innerWidth:	((document.all)?document.body.offsetWidth:null);
+var winheight=(window.innerHeight)?window.innerHeight:	((document.all)?document.body.offsetHeight:null);
+document.writeln('<strong><h1>Your Current Resolution: </strong> ',screen.width,' x ',screen.height,' </h1><small></small>');
+</script> 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Clip-1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1314328537653905"
+     data-ad-slot="3003717650"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+       
+      </div>
+
+
+    </div>
+	
+
+
+
+		
+	
+		<center style="margin-bottom: 30px;">
+	  <a href="#" id="printbutton" 	onClick="printme('http://clipart-library.com/image_gallery/n1494674.jpg', 3034318, 'http://clipart-library.com/clipart/clipart/n1494674.htm')">Print</a>
+      <a id="downloadbutton" href="/download/clipart/n1494674.htm" >Download <!--()!--> </a>
+	 
+	  </center><br><br>
+	
+	
+
+
+    
+    <div id="share">
+      Share: 
+      <a class="resp-sharing-button__link" href="https://www.facebook.com/sharer.php?u=http://clipart-library.com/clipart/n1494674.htm" target="_blank" aria-label="Facebook">
+        <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>Facebook</div>
+      </a>
+
+      <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Finance Manager Cliparts%20http://clipart-library.com/clipart/n1494674.htm" target="_blank" aria-label="Twitter">
+        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>Twitter</div>
+      </a>
+
+      <a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Finance Manager Cliparts&amp;caption=Finance Manager Cliparts&amp;content=http://clipart-library.com/clipart/n1494674.htm&amp;canonicalUrl=http://clipart-library.com/clipart/n1494674.htm&amp;shareSource=tumblr_share_button" target="_blank" aria-label="Tumblr">
+        <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>Tumblr</div>
+      </a>
+
+      <a class="resp-sharing-button__link" href="mailto:?subject=Finance Manager Cliparts&amp;body=http://clipart-library.com/clipart/n1494674.htm" target="_self" aria-label="E-Mail">
+        <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>E-Mail</div>
+      </a>
+
+      <a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http://clipart-library.com/clipart/n1494674.htm&amp;media=http://clipart-library.com/image_gallery/n1494674.jpg&amp;summary=Finance Manager Cliparts" target="_blank" aria-label="Pinterest">
+        <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>Pinterest</div>
+      </a>
+
+      <a class="resp-sharing-button__link" href="whatsapp://send?text=Finance Manager Cliparts%20http://clipart-library.com/clipart/n1494674.htm" target="_blank" aria-label="WhatsApp">
+        <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+	</div>WhatsApp</div>
+      </a>
+    </div>
+    <br class="clear">
+  </div>
+
+
+
+<div id="recommended">
+<h2 style="margin-top: 5px;">Clip Arts Related To : Business marketing clipart <a href="http://clipart-library.com/finance-manager-cliparts.html"> <p style="font-size: 16px;">(view all Finance Manager Cliparts)</p></a></h2>
+
+
+
+<div class="categories">
+    <div class="thumbnails" id="album">
+ <div class='thumbnail'>
+    <a href='/clipart/n1494707.htm' target='_blank'><img src='/image_gallery/n1494707.jpg'  alt=Finance committee clipart /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n103385.htm' target='_blank'><img src='/image_gallery/n103385.png'  alt=Finance cliparts /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1494667.htm' target='_blank'><img src='/image_gallery/n1494667.jpg'  alt=Clipart general information /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1494649.htm' target='_blank'><img src='/image_gallery/n1494649.png'  alt=Accounting Professional Clipart /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1494701.htm' target='_blank'><img src='/image_gallery/n1494701.png'  alt=Finance committee clipart /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n103403.htm' target='_blank'><img src='/image_gallery/n103403.png'  alt=Presentation Clipart Solution. ConceptDraw /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1494674.htm' target='_blank'><img src='/image_gallery/n1494674.jpg'  alt=Business marketing clipart /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1494664.htm' target='_blank'><img src='/image_gallery/n1494664.png'  alt=Investor Clipart /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n1232780.htm' target='_blank'><img src='/image_gallery/n1232780.png'  alt=Management /></a>
+  </div><div class='thumbnail'>
+    <a href='/clipart/n103411.htm' target='_blank'><img src='/image_gallery/n103411.png'  alt=Finance cliparts /></a>
+  </div>
+
+
+
+
+</div></div></div>
+
+
+
+    <div class="thumbnail" style="width: 92.3%;height: 220px;">
+
+							<h1 style="font-size: 14px;">Codes for Insertion:</h1>
+							<p style="margin-top:0px;">
+								<div class="hcw">Short Link</div>
+								<input id="s" type="text" value="http://clipart-library.com/clipart/n1494674.htm" style="width:100%;">
+							</p>
+
+							<p style="margin-bottom:20px;">
+								<div class="hcw">Preview / HTML</div>
+								<input id="s" type="text" value='<a href="http://clipart-library.com/clipart/n1494674.htm"><img src="http://clipart-library.com/image_gallery/n1494674.jpg" width="192" height="120" /></a>' style="width:100%;">
+							</p>
+
+							<p style="margin-bottom:20px;">
+								<div class="hcw">Forum / BBCode</div>
+								<input id="s" type="text" value="[URL=http://clipart-library.com/clipart/n1494674.htm][IMG]http://clipart-library.com/image_gallery/n1494674.jpg[/IMG][/URL]" style="width:100%;">
+							</p>
+  </div>
+
+
+
+    
+ 
+
+<div id="recommended">
+<h2>Other Popular Clip Arts</h2>
+
+
+
+<div class="categories">
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Link Cliparts</p><a href="/link-cliparts.html"><img src="/data_images/578251.png"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Cute Unicorn Cliparts</p><a href="/cute-unicorn-cliparts.html"><img src="/img/1767468.png"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Cute Train Cliparts</p><a href="/cute-train-cliparts.html"><img src="/img/1378564.png"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Tennis Player Cliparts</p><a href="/tennis-player-cliparts.html"><img src="/img/86554.jpg"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Animal Art Cliparts</p><a href="/animal-art-cliparts.html"><img src="/img/820183.jpg"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Theatre Masks</p><a href="/theatre-masks.html"><img src="/images/8iEb5AX4T.png"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Cartoon People Sleeping</p><a href="/cartoon-people-sleeping.html"><img src="/images/6crokbxqi.gif"></a></div>
+<div class="albumt" style="height: 200px;"><p style="font-weight: bold;font-size: 16px;">Animated Computer Gifs</p><a href="/animated-computer-gifs.html"><img src="/images/rTnKonbgc.gif"></a></div>
+</div></div>
+
+
+
+</div>
+
+
+    
+</div>
+
+<div id="footerc"><div id="footer">
+    <p id="copy"><a href="/" >Clipart Library</a> &copy; 2016</p>
+  <ul>    
+    <li><a href="../contact.html" >Contact</a></li>
+    <li><a href="../privacy-policy/index.html" >Privacy Policy</a></li>
+    <li><a href="../terms.html" >Terms of Use</a></li>
+  </ul>
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();//--></script><!--/LiveInternet-->
+ 
+  
+</div></div>
+
+
+
+</body>
+</html>
