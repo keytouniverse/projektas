@@ -20,13 +20,13 @@ class CreateBudgetTable extends Migration
     {
         Schema::create('budget', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->double('amount');
             $table->integer('categories_id')->unsigned();
 
         });
 
-        Schema::table('expenses', function($table) {
+        Schema::table('budget', function($table) {
             $table->foreign('categories_id')->references('id')->on('categories');
         });
     }
