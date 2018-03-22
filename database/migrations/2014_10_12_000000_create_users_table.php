@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('currency')->nullable();
-            $table->integer('income_day')->nullable();
+            $table->string('currency')->default('EUR');
+            $table->integer('income_day')->default(1);
         });
     }
 
