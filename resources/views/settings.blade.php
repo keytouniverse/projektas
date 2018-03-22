@@ -14,19 +14,13 @@
                 <div class="card-header">Settings</div>
                 <div class="card-body">
 
-                    <div class="dropdown">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                            Change Language
-                        </button>
-                        <button type="button" class="btn">Change</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Lithuanian</a>
-                            <a class="dropdown-item" href="#">English</a>
-                        </div>
-                    </div>
-                    <ul class="button-right">
 
-                    </ul>
+                        <select name="Language" class="selectbigger">
+                            <option value="Lithuanian">Lithuanian</option>
+                            <option value="English">English</option>
+                        </select>
+                        <button type="button" class="btn" >Change</button>
+
                 </div>
 
 
