@@ -19,4 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/settings', 'PagesController@settings');
 Route::get('/about', 'PagesController@about');
 
-Route::post('update','UpdateController@updateLan');
+Route::post('update','UpdateController@updateCurrency');

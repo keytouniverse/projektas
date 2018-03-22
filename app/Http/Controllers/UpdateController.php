@@ -9,7 +9,7 @@ use Auth;
 
 class UpdateController extends Controller
 {
-    public function updateLan(Request $request)
+    public function updateCurrency(Request $request)
     {
         $currency = $request->input('currency');
         $userId = Auth::id();
