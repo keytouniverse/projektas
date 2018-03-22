@@ -48,15 +48,24 @@
                                                      document.getElementById('settings-page').submit();">
                                         Settings
                                     </a>
+                                    <a class="dropdown-item" href="{{ url('/about') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('about-page').submit();">
+                                        About
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                     <form id="settings-page" action="{{ url('/settings') }}">
+                                        @csrf
+                                    </form>
+                                    <form id="about-page" action="{{ url('/about') }}">
                                         @csrf
                                     </form>
                                 </div>
