@@ -13,9 +13,9 @@
                 <div class="card">
                     <div class="card-header">About</div>
 
-
                 </div>
             </div>
         </div>
     </div>
+
 @endsection
