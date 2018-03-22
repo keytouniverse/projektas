@@ -18,6 +18,6 @@ class UpdateController extends Controller
         DB::table('users')
             ->where('id', $userId)
             ->update(['currency' => $currencyy]);
-
+        return back();
     }
 }
