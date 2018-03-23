@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Http\Requests;
+use Auth;
 
 class PagesController extends Controller
 {
     public function settings(){
-        return view('settings');
+        $userId = Auth::id();
+        $currentcurrency = DB::table('users')->where('id', $userId)->value('currency');
+        $incomeday = DB::table('users')->where('id', $userId)->value('income_day');
+        return view('settings', compact('currentcurrency','incomeday'));
     }
     public function about(){
         return view('about');

@@ -14,14 +14,19 @@
                 <div class="card-body">
 
                     {{--Choose currency in user settings--}}
-                    <form action = "/update" method = "post">
+                    <?php $currencies = array('EUR', 'USD', 'GPB', 'RUB'); ?>
+
+                    <form action = "/updateCurrency" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
                     <label>Default currency:</label>
                         <select name="currency" class="selectbigger">
-                            <option selected="selected" value="EUR">EUR</option>
-                            <option value="USD">USD</option>
-                            <option value="GPB">GPB</option>
-                            <option value="RUB">RUB</option>
+                            @foreach($currencies as $currency)
+                                @if($currency == $currentcurrency){
+                                    <option selected="selected" value={{$currentcurrency}}>{{$currentcurrency}}</option>
+                                @else
+                                    <option value={{$currency}}>{{$currency}}</option>
+                                @endif
+                            @endforeach
                         </select>
                         <td colspan = '2'>
                             <input type = 'submit' value = "Change"/>
@@ -32,13 +37,16 @@
                     </form>
 
                     {{--Choose income day in user settings--}}
-                    <form action = "/updated" method = "post">
+                    <form action = "/updateDay" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
                     <label>Income day:</label>
                         <select name="Income_day" class="selectbigger">
-                            <option selected="selected" value="1">1</option>
-                        <?php for ($i = 2; $i <= 31; $i++) : ?>
-                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php for ($i = 1; $i <= 31; $i++) : ?>
+                            @if($i == $incomeday){
+                            <option selected="selected" value={{$incomeday}}>{{$incomeday}}</option>
+                            @else
+                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                            @endif
                         <?php endfor; ?>
                         </select>
                         <td colspan = '2'>
