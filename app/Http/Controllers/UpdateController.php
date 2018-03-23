@@ -20,4 +20,15 @@ class UpdateController extends Controller
             ->update(['currency' => $currencyy]);
         return back();
     }
+    public function updateIncomeDay(Request $request)
+    {
+        $incomeday = $request->input('Income_day');
+        $userId = Auth::id();
+        $data=array('currency'=>$incomeday);
+        $incomedayy = implode("", $data);
+        DB::table('users')
+            ->where('id', $userId)
+            ->update(['income_day' => $incomedayy]);
+        return back();
+    }
 }

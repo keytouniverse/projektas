@@ -19,4 +19,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/settings', 'PagesController@settings');
 Route::get('/about', 'PagesController@about');
 
-Route::post('update','UpdateController@updateCurrency');
+Route::post('update', 'UpdateController@updateCurrency'); // For updating currency in user settings
+Route::post('updated', 'UpdateController@updateIncomeDay'); // For updating income day in user settings
