@@ -8,15 +8,40 @@
 <body>
     <!--Navigation bar-->
     <div id="nav-placeholder">
-
     </div>
-
     <script>
         $(function () {
             $("#nav-placeholder").load("meniu.html");
         });
     </script>
     <!--end of Navigation bar-->
+
+    <!--Text box to write in-->
+    <form action="/action_page.php">
+        <br>
+        <br>
+        <br> Your spent money:
+        <input type="text" name="expenses">
+        <br>
+
+        <!--DropDown list of categories-->
+        <select>
+            <option value="foodandfroceries">Food & Groceries</option>
+            <option value="emergencyfund">Emergency Fund</option>
+            <option value="housing">Housing</option>
+            <option value="utilities">Utilities</option>
+            <option value="personalcare">Personal Care</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="transport">Transport</option>
+            <option value="healthcare">Health Care</option>
+            <option value="pets">Pets</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+        <!--If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".-->
+        <!--end of DropDown list of categories-->
+    </form>
 </body>
 
 </html>
