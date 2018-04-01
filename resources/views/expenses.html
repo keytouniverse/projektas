@@ -5,6 +5,16 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>Expenses</title>
     <style>
+        div[id=piechart] {
+            position: absolute;
+            top: 80px;
+            right: 80px;
+            border: 3px dashed;
+            padding: 25px;
+            border-radius: 8px;
+            background-color: #E6E6FA;
+        }
+
         pad {
             position: absolute;
             top: 80px;
@@ -19,7 +29,7 @@
             color: black;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
-            
+
         }
 
         select {
@@ -44,7 +54,7 @@
     </style>
 </head>
 
-<body bgcolor="#E6E6FA"> 
+<body bgcolor="#E6E6FA">
     <!--Navigation bar-->
     <div id="nav-placeholder">
     </div>
@@ -63,7 +73,7 @@
             <br>
             <input type="text" name="expenses">
             <br>
-            
+
 
             <!--DropDown list of categories-->
 
@@ -105,6 +115,43 @@
 
         </form>
     </pad>
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the chart and set the chart values
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Category', 'Percentage'],
+                ['Food & Groceries', 13],
+                ['Emergency Fund', 0],
+                ['Housing', 15.5],
+                ['Personal Care', 10.5],
+                ['Entertainment', 7],
+                ['Transport', 0],
+                ['Health Care', 0],
+                ['Pets', 8],
+                ['other', 46]
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = {  titleTextStyle: {
+                    color: 'black',
+                    fontName: 'Arial',
+                    fontSize: 20
+                }, 'title': 'This month you spent', backgroundColor: 'E6E6FA', 'width': 550, 'height': 400 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
 </body>
 
 </html>
