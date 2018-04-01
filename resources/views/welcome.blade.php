@@ -92,7 +92,6 @@
                     {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
                 </div>
                 
-                <img src="images/money-1.jpg.png" alt="Money image" height=200 width=400> </img>
                 
             </div>
         </div>

@@ -3,9 +3,48 @@
 
 <head>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Expenses</title>
+    <style>
+        pad {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            width: 300px;
+            border: 3px dashed;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        text1 {
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            
+        }
+
+        select {
+            position: relative;
+            top: 30px;
+            width: 300px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+
+        input[type=text] {
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            font-size: 20px;
+            border-radius: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #819FF7
+        }
+    </style>
 </head>
 
-<body>
+<body bgcolor="#E6E6FA"> 
     <!--Navigation bar-->
     <div id="nav-placeholder">
     </div>
@@ -17,31 +56,55 @@
     <!--end of Navigation bar-->
 
     <!--Text box to write in-->
-    <form action="/action_page.php">
-        <br>
-        <br>
-        <br> Your spent money:
-        <input type="text" name="expenses">
-        <br>
+    <pad>
+        <form action="/action_page.php">
+            <br>
+            <text1> Your spent money: </text1>
+            <br>
+            <input type="text" name="expenses">
+            <br>
+            
 
-        <!--DropDown list of categories-->
-        <select>
-            <option value="foodandfroceries">Food & Groceries</option>
-            <option value="emergencyfund">Emergency Fund</option>
-            <option value="housing">Housing</option>
-            <option value="utilities">Utilities</option>
-            <option value="personalcare">Personal Care</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="transport">Transport</option>
-            <option value="healthcare">Health Care</option>
-            <option value="pets">Pets</option>
-            <option value="other">Other</option>
-        </select>
-        <br>
-        <input type="submit" value="Submit">
-        <!--If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".-->
-        <!--end of DropDown list of categories-->
-    </form>
+            <!--DropDown list of categories-->
+
+            <br>
+            <select>
+
+                <option value="foodandfroceries">Food & Groceries</option>
+                <option value="emergencyfund">Emergency Fund</option>
+                <option value="housing">Housing</option>
+                <option value="utilities">Utilities</option>
+                <option value="personalcare">Personal Care</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="transport">Transport</option>
+                <option value="healthcare">Health Care</option>
+                <option value="pets">Pets</option>
+                <option value="other">Other</option>
+
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+            <!--If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".-->
+            <!--end of DropDown list of categories-->
+
+        </form>
+    </pad>
 </body>
 
 </html>
