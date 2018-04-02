@@ -25,17 +25,30 @@
             border-radius: 8px;
         }
 
+        pad2 {
+            position: absolute;
+            top: 350px;
+            left: 80px;
+            width: 300px;
+            border: 3px dashed;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
         text1 {
             color: black;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
-
+        }
+        text2 {
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
         }
 
         select {
-            position: relative;
-            top: 30px;
-            width: 300px;
+            position: absolute;
+            right: 0 px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             border-radius: 4px;
@@ -96,18 +109,7 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+
 
             <input type="submit" value="Submit">
             <!--If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".-->
@@ -115,6 +117,21 @@
 
         </form>
     </pad>
+
+
+    <pad2>
+        <text1>  Summary: </text1>
+        <br>
+        <br> Income:
+        <input type="text" value="150" id="income">
+        <br>
+        <br> Expenses:
+        <input type="text" value="100" id="expenses">
+        <br>
+        <br> Total:
+        <input type="text" value="50" id="total">
+        
+    </pad2>
     <div id="piechart"></div>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -140,11 +157,13 @@
             ]);
 
             // Optional; add a title and set the width and height of the chart
-            var options = {  titleTextStyle: {
+            var options = {
+                titleTextStyle: {
                     color: 'black',
                     fontName: 'Arial',
                     fontSize: 20
-                }, 'title': 'This month you spent', backgroundColor: 'E6E6FA', 'width': 550, 'height': 400 };
+                }, 'title': 'This month you spent', backgroundColor: 'E6E6FA', 'width': 550, 'height': 400
+            };
 
             // Display the chart inside the <div> element with id="piechart"
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
