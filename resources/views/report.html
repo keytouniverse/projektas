@@ -5,18 +5,64 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>Report</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
 </head>
 
 <body bgcolor="#E6E6FA">
-        <!--Navigation bar-->
-        <div id="nav-placeholder">
-            </div>
-            <script>
-                $(function () {
-                    $("#nav-placeholder").load("meniu.html");
-                });
-            </script>
-            <!--end of Navigation bar-->
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("meniu.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
+    <pad5>
+        <Label>From</Label>
+
+        <input type="date" />
+
+        <Label>To</Label>
+        <input type="date" />
+        <input type="submit" value="Show">
+
+        <table style="width:100%">
+            <tr>
+                <th>Nr</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>50</td>
+                <td>2018-04-02</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Transport</td>
+                <td>13.5</td>
+                <td>2018-03-29</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Housing</td>
+                <td>150.4</td>
+                <td>2018-03-15</td>
+            </tr>
+        </table>
+
+    </pad5>
 </body>
 
 </html>
