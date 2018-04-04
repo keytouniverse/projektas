@@ -46,6 +46,15 @@ pad4 {
     padding: 25px;
     border-radius: 8px;
 }
+pad5 {
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: 900px;
+    border: 3px dashed;
+    padding: 25px;
+    border-radius: 8px;
+}
 text1 {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
@@ -65,7 +74,26 @@ text3 {
     top: 80px;
     right: 300px;
 }
-
+text4 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    position: absolute;
+    font-weight: bold;
+    top: 80px;
+    left: 80px;
+}
+text5 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-right: 30px
+}
+margin
+{
+    margin: 30px;
+    margin-left: 100px;
+}
 select {
     position: absolute;
     right: 0 px;
