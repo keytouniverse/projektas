@@ -38,9 +38,9 @@
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a class="nav-link" href="{{ url('/settings') }}">Expenses</a></li>
-                            <li><a class="nav-link" href="{{ url('/settings') }}">Budget</a></li>
-                            <li><a class="nav-link" href="{{ url('/settings') }}">Currency Converter</a></li>
+                            <li><a class="nav-link" href="{{ url('/expenses') }}">Expenses</a></li>
+                            <li><a class="nav-link" href="{{ url('/budget') }}">Budget</a></li>
+                            <li><a class="nav-link" href="{{ url('/currency_converter') }}">Currency Converter</a></li>
 
                             <li class="nav-item dropdown"> {{-- Statement --}}
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -18,6 +18,15 @@ class PagesController extends Controller
     public function about(){
         return view('about');
     }
+    public function expenses(){
+        return view('expenses');
+    }
+    public function budget(){
+        return view('budget');
+    }
+    public function currency_converter(){
+        return view('currency_converter');
+    }
     public function welcome(){
         return view('welcome');
     }
