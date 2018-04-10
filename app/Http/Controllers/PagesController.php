@@ -27,6 +27,12 @@ class PagesController extends Controller
     public function currency_converter(){
         return view('currency_converter');
     }
+    public function report(){
+        return view('report');
+    }
+    public function graphs(){
+        return view('graphs');
+    }
     public function welcome(){
         return view('welcome');
     }

@@ -21,6 +21,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/expenses', 'PagesController@expenses');
 Route::get('/budget', 'PagesController@budget');
 Route::get('/currency_converter', 'PagesController@currency_converter');
+Route::get('/report', 'PagesController@report');
+Route::get('/graphs', 'PagesController@graphs');
 
 Route::post('updateCurrency', 'UpdateController@updateCurrency'); // For updating currency in user settings
 Route::post('updateDay', 'UpdateController@updateIncomeDay'); // For updating income day in user settings
