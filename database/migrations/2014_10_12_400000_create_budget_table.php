@@ -19,15 +19,12 @@ class CreateBudgetTable extends Migration
     public function up()
     {
         Schema::create('budget', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id')->index();
             $table->timestamps();
             $table->double('amount');
             $table->integer('categories_id')->unsigned();
-
-        });
-
-        Schema::table('budget', function($table) {
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('categories_id', 'category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

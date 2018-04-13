@@ -19,6 +19,7 @@ class CreateExpensesTable extends Migration
     public function up()
     {
         Schema::create('expenses', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id')->index();
             $table->timestamp('created_at');
             $table->double('amount');
