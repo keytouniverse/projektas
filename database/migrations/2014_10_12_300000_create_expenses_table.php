@@ -24,11 +24,9 @@ class CreateExpensesTable extends Migration
             $table->timestamp('created_at');
             $table->double('amount');
             $table->integer('categories_id')->unsigned();
-
-        });
-
-        Schema::table('expenses', function($table) {
+            $table->integer('users_id')->unsigned();
             $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
