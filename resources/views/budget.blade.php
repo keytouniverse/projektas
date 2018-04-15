@@ -5,42 +5,47 @@
  * Date: 2018-04-11
  * Time: 02:18
  -->
+
 <style>
-    .categories {
-        position: relative;
-        left: -120px;
-        color: black;
-        font-size: 16px;
-    }
+ .categories {
+    position: relative;
+    left: -120px;
+    color: black;
+    font-size: 16px;
+}
 
-    .income {
-        position: relative;
-        left: -300px;
-        font-size: 16px;
-        color: black;
-    }
+.income {
+    position: relative;
+    left: -300px;
+    font-size: 16px;
+    color: black;
+}
 
-    input[type="text"] {
-        width:100px;
-        height:30px;
-        border-radius:5px;
-        background-color: lightblue;
-        margin-left:2px;
-        position: absolute;
-        right: -100px;
-    }
+input[type="text"] {
+    width:100px;
+    height:30px;
+    border-radius:5px;
+    background-color: lightblue;
+    margin-left:20px;
+    position: absolute;
+    right: -100px;
+}
 
-    input[type="text1"] {
-        width:150px;
-        height:30px;
-        border-radius:5px;
-        background-color: lightblue;
-        margin-left:2px;
-    }
+input[type="text1"] {
+    width:150px;
+    height:30px;
+    border-radius:5px;
+    background-color: lightblue;
+    margin-left:2px;
+}
+
 
 </style>
 
+<title>Budget</title>
+
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="income">
@@ -55,7 +60,7 @@
                 <input type="text1" name="Totalincome">
             </div>
                 <div class="categories">
-                    <pad3>
+                   
                         <text2>
                             Create a Budget
                             <br><br>
@@ -82,7 +87,7 @@
                             <br><br>
                             <input type="submit" value="Submit">
                         </text2>
-                    </pad3>
+            
                 </div>
         </div>
     </div>

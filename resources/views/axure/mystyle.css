@@ -1,4 +1,37 @@
 
+
+.categories {
+    position: relative;
+    left: -120px;
+    color: black;
+    font-size: 16px;
+}
+
+.income {
+    position: relative;
+    left: -300px;
+    font-size: 16px;
+    color: black;
+}
+
+input[type="text"] {
+    width:100px;
+    height:30px;
+    border-radius:5px;
+    background-color: lightblue;
+    margin-left:2px;
+    position: absolute;
+    right: -100px;
+}
+
+input[type="text1"] {
+    width:150px;
+    height:30px;
+    border-radius:5px;
+    background-color: lightblue;
+    margin-left:2px;
+}
+
 div[id=piechart] {
     position: absolute;
     top: 80px;
@@ -63,7 +96,7 @@ text1 {
 text2 {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 35px;
 }
 text3 {
     color: black;
