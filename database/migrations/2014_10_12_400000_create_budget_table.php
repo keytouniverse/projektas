@@ -22,10 +22,8 @@ class CreateBudgetTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->index();
             $table->timestamps();
-            $table->double('amount');
-            $table->integer('categories_id')->unsigned();
+            $table->double('total_income');
             $table->integer('users_id')->unsigned();
-            $table->foreign('categories_id')->references('id')->on('categories');
             $table->foreign('users_id')->references('id')->on('users');
         });
     }
