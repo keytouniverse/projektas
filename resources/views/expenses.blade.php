@@ -45,33 +45,46 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <form action = "/addExpense" method = "post">
+                    {{ csrf_field() }}
             <br>
             <text1> Your spent money: </text1>
             <br>
-            <input type="text" name="expenses">
+            <input type="text" name="amount">
             <br>
 
 
             <!--DropDown list of categories-->
 
             <br>
-            <select>
+            <select name="category">
 
-                <option value="foodandfroceries">Food & Groceries</option>
-                <option value="emergencyfund">Emergency Fund</option>
-                <option value="housing">Housing</option>
-                <option value="utilities">Utilities</option>
-                <option value="personalcare">Personal Care</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="transport">Transport</option>
-                <option value="healthcare">Health Care</option>
-                <option value="pets">Pets</option>
-                <option value="other">Other</option>
+                {{--<option value="1">Food & Groceries</option>--}}
+                {{--<option value="2">Emergency Fund</option>--}}
+                {{--<option value="3">Housing</option>--}}
+                {{--<option value="4">Utilities</option>--}}
+                {{--<option value="5">Personal Care</option>--}}
+                {{--<option value="6">Entertainment</option>--}}
+                {{--<option value="7">Transport</option>--}}
+                {{--<option value="8">Health Care</option>--}}
+                {{--<option value="9">Pets</option>--}}
+                {{--<option value="10">Other</option>--}}
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
 
             </select>
             <br>
             <br>
             <input type="submit" value="Submit">
+            </form>
 
                     
         <br>

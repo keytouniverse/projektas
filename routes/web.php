@@ -26,3 +26,5 @@ Route::get('/graphs', 'PagesController@graphs');
 
 Route::post('updateCurrency', 'UpdateController@updateCurrency'); // For updating currency in user settings
 Route::post('updateDay', 'UpdateController@updateIncomeDay'); // For updating income day in user settings
+
+Route::post('addExpense', 'AddController@addExpense'); // Add new expense
