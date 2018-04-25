@@ -19,8 +19,7 @@ class PagesController extends Controller
         return view('about');
     }
     public function expenses(){
-        //$userId = Auth::id();
-        $categories = DB::table('categories')->select('id', 'name')->get();
+        $categories = DB::table('categories')->get();
         return view('expenses', compact('categories'));
     }
     public function budget(){
