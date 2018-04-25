@@ -21,7 +21,7 @@
     }
     input[type="text2"] {
         border-radius:5px;
-        margin-left:2px;
+        margin-left:50px;
         position: absolute;
         left: 90px;
         background-color: #c6c8ca;
@@ -59,7 +59,7 @@
             <br>
             <select name="category">
                 @foreach($categories as $category)
-                    <option value="{{$category->id}}" name="{{$category->id}}">{{$category->name}}</option> // Visos kategorijos iš duombazės
+                    <option value="{{$category->id}}" name="{{$category->id}}">{{$category->name}}</option> // Categories from DB
                 @endforeach
             </select>
             <br>
@@ -71,14 +71,15 @@
         <br>
         <div class="Lowerpart">
         <text1>  Summary: </text1>
+            <br>
         <br> Income:
-        <input type="text2" value="" id="income">
+        <input type="text2" value={{$income}} id="income">
         <br>
-        <br> Expenses:
-        <input type="text2" value="" id="expenses">
+        <br> Expenses total:
+        <input type="text2" value={{$totalExpenses}} id="expenses">
         <br>
-        <br> Total:
-        <input type="text2" value="" id="total">
+        <br> Balance:
+        <input type="text2" value={{$income-$totalExpenses}} id="balance">
             </div>
             <div class="piechart"id="piechart">
 
@@ -93,15 +94,16 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Category', 'Percentage'],
-            ['Food & Groceries', 13],
-            ['Emergency Fund', 0],
-            ['Housing', 15.5],
-            ['Personal Care', 10.5],
-            ['Entertainment', 7],
-            ['Transport', 0],
-            ['Health Care', 0],
-            ['Pets', 8],
-            ['other', 46]
+            ['Food & Groceries', 30],
+            ['Emergency Fund', 2],
+            ['Housing', 31],
+            ['Utilities', 7],
+            ['Personal Care', 5],
+            ['Entertainment', 5.3],
+            ['Transport', 7.7],
+            ['Health Care', 2.1],
+            ['Pets', 3],
+            ['other', 6.9]
         ]);
 
         // Optional; add a title and set the width and height of the chart
