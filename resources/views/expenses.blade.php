@@ -58,27 +58,19 @@
 
             <br>
             <select name="category">
-
-                {{--<option value="1">Food & Groceries</option>--}}
-                {{--<option value="2">Emergency Fund</option>--}}
-                {{--<option value="3">Housing</option>--}}
-                {{--<option value="4">Utilities</option>--}}
-                {{--<option value="5">Personal Care</option>--}}
-                {{--<option value="6">Entertainment</option>--}}
-                {{--<option value="7">Transport</option>--}}
-                {{--<option value="8">Health Care</option>--}}
-                {{--<option value="9">Pets</option>--}}
-                {{--<option value="10">Other</option>--}}
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                {{--@foreach($categories as $category)--}}
+                    {{--<option value={{$category->$id}}>{{$category->$name}}</option>--}}
+                {{--@endforeach--}}
+                <option value="1" name="1" >Food & Groceries</option>
+                <option value="2" name="2" >Emergency Fund</option>
+                <option value="3" name="3" >Housing</option>
+                <option value="4" name="4" >Utilities</option>
+                <option value="5" name="5" >Personal Care</option>
+                <option value="6" name="6" >Entertainment</option>
+                <option value="7" name="7" >Transport</option>
+                <option value="8" name="8" >Health Care</option>
+                <option value="9" name="9" >Pets</option>
+                <option value="10" name="10" >Other</option>
 
             </select>
             <br>
