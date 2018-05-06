@@ -23,7 +23,14 @@ class PagesController extends Controller
         $categories = DB::table('categories')->get(); // Categories list from DB
         $totalExpenses = DB::table('expenses')->where('users_id', $userId)->sum('amount'); // Gets sum of all expenses
         $income = DB::table('budget')->where('users_id', $userId)->value('total_income');
-        return view('expenses', compact('categories','totalExpenses','income'));
+
+        $categoriesCount = DB::table('categories')->count();
+        $categoriesAmount = [];
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesAmount[$i] = DB::table('expenses')->where('users_id', $userId)->where('categories_id', $i)->sum('amount');
+        }
+        return view('expenses', compact('categories','totalExpenses','income',
+                        'categoriesCount','categoriesAmount'));
     }
     public function budget(){
         $userId = Auth::id();

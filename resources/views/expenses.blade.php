@@ -94,16 +94,17 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Category', 'Percentage'],
-            ['Food & Groceries', 30],
-            ['Emergency Fund', 2],
-            ['Housing', 31],
-            ['Utilities', 7],
-            ['Personal Care', 5],
-            ['Entertainment', 5.3],
-            ['Transport', 7.7],
-            ['Health Care', 2.1],
-            ['Pets', 3],
-            ['other', 6.9]
+            ['Food & Groceries', {{$categoriesAmount[1]}}],
+            ['Emergency Fund', {{$categoriesAmount[2]}}],
+            ['Housing', {{$categoriesAmount[3]}}],
+            ['Utilities', {{$categoriesAmount[4]}}],
+            ['Personal Care', {{$categoriesAmount[5]}}],
+            ['Entertainment', {{$categoriesAmount[6]}}],
+            ['Transport', {{$categoriesAmount[7]}}],
+            ['Health Care', {{$categoriesAmount[8]}}],
+            ['Pets', {{$categoriesAmount[9]}}],
+            ['Other', {{$categoriesAmount[10]}}],
+            ['Unspent Money', {{$income-$totalExpenses}}]
         ]);
 
         // Optional; add a title and set the width and height of the chart
@@ -111,8 +112,8 @@
             titleTextStyle: {
                 color: 'black',
                 fontName: 'Arial',
-                fontSize: 20
-            }, 'title': 'This month you spent', 'backgroundColor': 'transparent', 'width': 550, 'height': 400
+                fontSize: 30
+            }, 'title': 'This month you spent', 'backgroundColor': 'transparent', 'width': 800, 'height': 600
         };
 
         // Display the chart inside the <div> element with id="piechart"
