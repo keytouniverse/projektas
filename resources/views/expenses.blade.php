@@ -106,7 +106,9 @@
             ['Other', {{$categoriesAmount[10]}}],
             ['Unspent Money', {{$income-$totalExpenses}}]
         ]);
-
+        @if($income-$totalExpenses<0)
+            
+        @else
         // Optional; add a title and set the width and height of the chart
         var options = {
             titleTextStyle: {
@@ -119,6 +121,7 @@
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
+        @endif
     }
 </script>
 </div>
