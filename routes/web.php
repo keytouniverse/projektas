@@ -28,3 +28,4 @@ Route::post('updateCurrency', 'UpdateController@updateCurrency'); // For updatin
 Route::post('updateDay', 'UpdateController@updateIncomeDay'); // For updating income day in user settings
 
 Route::post('addExpense', 'AddController@addExpense'); // Add new expense
+Route::post('addIncome', 'AddController@addIncome'); // Add income

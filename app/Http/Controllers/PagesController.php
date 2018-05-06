@@ -26,7 +26,9 @@ class PagesController extends Controller
         return view('expenses', compact('categories','totalExpenses','income'));
     }
     public function budget(){
-        return view('budget');
+        $userId = Auth::id();
+        $totalIncome = DB::table('budget')->where('users_id', $userId)->value('total_income');
+        return view('budget', compact('totalIncome'));
     }
     public function currency_converter(){
         return view('currency_converter');

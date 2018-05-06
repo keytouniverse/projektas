@@ -19,6 +19,7 @@
     left: -300px;
     font-size: 16px;
     color: black;
+    padding-top: 30px;
 }
 
 input[type="text"] {
@@ -32,7 +33,7 @@ input[type="text"] {
 }
 
 input[type="text1"] {
-    width:150px;
+    width:200px;
     height:30px;
     border-radius:5px;
     background-color: lightblue;
@@ -43,14 +44,14 @@ input[value="Edit"]
 {
     width:50px;
     position: absolute;
-    background-color: lightblue;
+    background-color: cornflowerblue;
     right: -265px;
 }
 
  input[value="Submit"]
  {
      width:65px;
-     background-color: lightblue;
+     background-color: cornflowerblue;
  }
 
 </style>
@@ -62,15 +63,17 @@ input[value="Edit"]
     <div class="container">
         <div class="row justify-content-center">
             <div class="income">
-                <text1> Income: </text1>
+                <form action = "/addIncome" method = "post">
+                    {{ csrf_field() }}
+                <text1> Add to income: </text1>
                 <br>
                 <input type="text1" name="income">
                 <input type="submit" value="Submit">
-                <br><br>
+                </form>
                 <br>
-                <text1> Total: </text1>
+                <text1> Total income this month: </text1>
                 <br>
-                <input type="text1" name="Totalincome">
+                <input type="text1" name="Totalincome" value={{$totalIncome}}>
             </div>
                 <div class="categories">
                    

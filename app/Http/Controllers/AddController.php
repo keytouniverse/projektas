@@ -18,4 +18,10 @@ class AddController extends Controller
             ->insert($data);
         return back();
     }
+    public function addIncome(Request $request){
+        $userId = Auth::id();
+        $incomeAmount = $request->input('income');
+        DB::table('budget')->where('users_id', $userId)->increment('total_income', $incomeAmount);
+        return back();
+    }
 }
