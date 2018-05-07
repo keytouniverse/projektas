@@ -24,4 +24,18 @@ class AddController extends Controller
         DB::table('users')->where('id', $userId)->increment('total_income', $incomeAmount);
         return back();
     }
+    public function addBudget(Request $request){
+        $userId = Auth::id();
+        if (DB::table('budget')->where('users_id', $userId)->get() == Null){
+            DB::table('budget')->insert('users_id', $userId);
+        }
+        $data = $request->all();
+        $count = 1;
+        for ($i=1;$i<=10;$i++){
+            $array = array('categories_id'=>$count,'budget_id'=>$userId,'amount'=>$data[$count]);
+            DB::table('budgets_categories')->insert($array);
+            $count++;
+        }
+        return back();
+    }
 }

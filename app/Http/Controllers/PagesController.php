@@ -35,7 +35,13 @@ class PagesController extends Controller
     public function budget(){
         $userId = Auth::id();
         $totalIncome = DB::table('users')->where('id', $userId)->value('total_income');
-        return view('budget', compact('totalIncome'));
+
+        $categoriesCount = DB::table('categories')->count();
+        $categoriesNames = [];
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
+        }
+        return view('budget', compact('totalIncome', 'categoriesNames','categoriesCount'));
     }
     public function currency_converter(){
         return view('currency_converter');

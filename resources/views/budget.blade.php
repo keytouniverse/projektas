@@ -76,41 +76,17 @@ input[value="Edit"]
                 <input type="text1" name="Totalincome" value={{$totalIncome}}>
             </div>
                 <div class="categories">
-                   <form>
+                   <form action="/addBudget" method="post" name="budget">
+                       {{ csrf_field() }}
                         <text2>
                             Create a Budget
                             <br><br>
-                            Food & Groceries:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Emergency Fund:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Housing:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Utilities:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Personal Care:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Entertainment:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Transport:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Health Care:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Pets:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Other:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br>
+                            @for($i=1;$i<=$categoriesCount;$i++)
+                                {{$categoriesNames[$i]}}
+                                <input type="text" name={{$i}}>
+                                {{--<input type="submit" value="Edit">--}}
+                                <br><br>
+                            @endfor
                             <input type="submit" value="Submit">
                         </text2>
                    </form>
