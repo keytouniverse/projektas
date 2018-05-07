@@ -22,7 +22,6 @@ class CreateBudgetTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->index();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->double('total_income');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
         });

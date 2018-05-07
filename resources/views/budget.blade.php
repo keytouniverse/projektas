@@ -76,7 +76,7 @@ input[value="Edit"]
                 <input type="text1" name="Totalincome" value={{$totalIncome}}>
             </div>
                 <div class="categories">
-                   
+                   <form>
                         <text2>
                             Create a Budget
                             <br><br>
@@ -113,7 +113,7 @@ input[value="Edit"]
                             <br><br>
                             <input type="submit" value="Submit">
                         </text2>
-            
+                   </form>
                 </div>
         </div>
     </div>
