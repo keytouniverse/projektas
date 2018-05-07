@@ -26,8 +26,8 @@ class AddController extends Controller
     }
     public function addBudget(Request $request){
         $userId = Auth::id();
-        if (DB::table('budget')->where('users_id', $userId)->get() == Null){
-            DB::table('budget')->insert('users_id', $userId);
+        if (DB::table('budget')->where('users_id', $userId)->first() == null){
+            DB::table('budget')->insert(['users_id'=>$userId]);
         }
         $data = $request->all();
         $count = 1;
