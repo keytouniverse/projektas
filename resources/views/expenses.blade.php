@@ -107,7 +107,7 @@
             ['Unspent Money', {{$income-$totalExpenses}}]
         ]);
         @if($income-$totalExpenses<0)
-            
+
         @else
         // Optional; add a title and set the width and height of the chart
         var options = {
