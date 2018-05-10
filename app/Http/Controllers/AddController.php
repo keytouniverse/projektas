@@ -26,8 +26,13 @@ class AddController extends Controller
     }
     public function addBudget(Request $request){
         $userId = Auth::id();
+        $budgetId = DB::table('budget')->where('users_id', $userId)->value('id');
         if (DB::table('budget')->where('users_id', $userId)->first() == null){
             DB::table('budget')->insert(['users_id'=>$userId]);
+        }
+        if (DB::table('budgets_categories')->where('budget_id', $budgetId)->exists()){
+            app('App\Http\Controllers\UpdateController')->updateBudgetValues($request);
+            return back();
         }
         $data = $request->all();
         $count = 1;

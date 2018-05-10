@@ -48,7 +48,12 @@ input[value="Edit"]
     right: -265px;
 }
 
- input[value="Submit"]
+ input[value="Add"]
+ {
+     width:65px;
+     background-color: cornflowerblue;
+ }
+ input[value="Confirm"]
  {
      width:65px;
      background-color: cornflowerblue;
@@ -68,7 +73,7 @@ input[value="Edit"]
                 <text1> Add to income: </text1>
                 <br>
                 <input type="text1" name="income">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Add">
                 </form>
                 <br>
                 <text1> Total income this month: </text1>
@@ -83,11 +88,11 @@ input[value="Edit"]
                             <br><br>
                             @for($i=1;$i<=$categoriesCount;$i++)
                                 {{$categoriesNames[$i]}}
-                                <input type="text" name={{$i}}>
+                                <input type="text" name={{$i}} value={{$budgetAmounts[$i]}}>
                                 {{--<input type="submit" value="Edit">--}}
                                 <br><br>
                             @endfor
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Confirm">
                         </text2>
                    </form>
                 </div>

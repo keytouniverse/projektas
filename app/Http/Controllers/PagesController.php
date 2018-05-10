@@ -38,10 +38,17 @@ class PagesController extends Controller
 
         $categoriesCount = DB::table('categories')->count();
         $categoriesNames = [];
+        $budgetAmounts = [];
         for ($i = 1;$i<=$categoriesCount;$i++){
             $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
         }
-        return view('budget', compact('totalIncome', 'categoriesNames','categoriesCount'));
+        $budgetId = DB::table('budget')->where('users_id', $userId)->value('id');
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $budgetAmounts[$i] = DB::table('budgets_categories')->where('budget_id', $budgetId)->
+                                where('categories_id', $i)->value('amount');
+        }
+        return view('budget', compact('totalIncome', 'categoriesNames','categoriesCount',
+                    'budgetAmounts'));
     }
     public function currency_converter(){
         return view('currency_converter');
