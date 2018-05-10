@@ -36,7 +36,8 @@ class AddController extends Controller
         }
         $data = $request->all();
         $count = 1;
-        for ($i=1;$i<=10;$i++){
+        $categoriesCount = DB::table('categories')->count();
+        for ($i=1;$i<=$categoriesCount;$i++){
             $array = array('categories_id'=>$count,'budget_id'=>$userId,'amount'=>$data[$count]);
             DB::table('budgets_categories')->insert($array);
             $count++;

@@ -33,7 +33,8 @@ class UpdateController extends Controller
         $userId = Auth::id();
         $budgetId = DB::table('budget')->where('users_id', $userId)->value('id');
         $data = $request->all();
-        for ($count=1;$count<=10;$count++){
+        $categoriesCount = DB::table('categories')->count();
+        for ($count=1;$count<=$categoriesCount;$count++){
             DB::table('budgets_categories')->where('budget_id', $budgetId)->where('categories_id', $count)->
                 update(['amount'=>$data[$count]]);
         }
