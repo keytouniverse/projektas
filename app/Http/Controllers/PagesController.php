@@ -54,8 +54,17 @@ class PagesController extends Controller
         return view('currency_converter');
     }
     public function report(){
+        $expensesCount = DB::table('expenses')->count();
+        $categoriesNames = [];
+        for ($i = 1;$i<=$expensesCount;$i++){
+            $categoriesID[$i] = DB::table('expenses')->where('id',$i)->value('categories_id');
+        }
+        for ($i = 1;$i<=$expensesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id',$categoriesID[$i])->value('name');
+        }
         $users = DB::select('select * from expenses');
-        return view('report', compact('users'));
+        $categories = DB::select('select * from categories');
+        return view('report', compact('users','categoriesNames'));
     }
     public function graphs(){
         return view('graphs');

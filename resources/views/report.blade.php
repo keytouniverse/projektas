@@ -59,6 +59,7 @@ tr:first-child {
         });
     </script>
     <!--end of Navigation bar-->
+
     <pad5>
 
         <Label>From</Label>
@@ -75,12 +76,15 @@ tr:first-child {
                     <th>Amount</th>
                     <th>Date</th>
                 </tr>
+                <!--{{$sumting = 1}};-->
         @foreach($users as $user)
             <tr>
+
                 <td>{{$user->id}}</td>
-                <td>{{$user->categories_id}}</td>
+                <td>{{$categoriesNames[$sumting]}}</td>
                 <td>{{$user->amount}}</td>
                 <td>{{$user->created_at}}</td>
+                <!--{{$sumting = $sumting + 1}};-->
             </tr>
         @endforeach
             </table>
