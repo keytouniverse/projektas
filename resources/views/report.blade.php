@@ -89,36 +89,6 @@ tr:first-child {
         @endforeach
             </table>
         </form>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%">
-            <tr>
-                <th>Nr</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>50</td>
-                <td>2018-04-02</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Transport</td>
-                <td>13.5</td>
-                <td>2018-03-29</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Housing</td>
-                <td>150.4</td>
-                <td>2018-03-15</td>
-            </tr>
-        </table>
-
     </pad5>
                 </div>
             </div>
