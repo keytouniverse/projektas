@@ -30,8 +30,22 @@ tr:first-child {
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
                     <script>
-        $(document).ready(function () {
-            $("#datepicker").datepicker();
+
+            $("#datepicker_from").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: 'DD-MM-YYYY',
+                startDate: '01-10-2017',
+                onSelect: function (dateText) {
+                    $("#datepicker_to").datepicker('option','minDate',dateText);
+                }
+        });
+        $("#datepicker_to").datepicker({
+           changeMonth : true,
+           changeYear: true,
+            format: 'DD-MM-YYYY',
+            endDate: '01-11-2017',
+
         });
     </script>
     <script>
@@ -46,13 +60,31 @@ tr:first-child {
     </script>
     <!--end of Navigation bar-->
     <pad5>
-        <Label>From</Label>
 
-        <input type="date" />
+        <Label>From</Label>
+        <form action ="/showreports" method = "get">
+        <input type="date" name="from"/>
 
         <Label>To</Label>
-        <input type="date" />
+        <input type="date" name="to"/>
         <input type="submit" value="Show">
+            <table style="width:100%">
+                <tr>
+                    <th>Nr</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+        @foreach($users as $user)
+            <tr>
+                <td>{{$user->id}}</td>
+                <td>{{$user->categories_id}}</td>
+                <td>{{$user->amount}}</td>
+                <td>{{$user->created_at}}</td>
+            </tr>
+        @endforeach
+            </table>
+        </form>
         <br>
         <br>
         <br>

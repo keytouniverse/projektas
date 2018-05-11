@@ -23,6 +23,7 @@ Route::get('/budget', 'PagesController@budget');
 Route::get('/currency_converter', 'PagesController@currency_converter');
 Route::get('/report', 'PagesController@report');
 Route::get('/graphs', 'PagesController@graphs');
+Route::get('showreports', 'AddController@showreports');
 
 Route::post('updateCurrency', 'UpdateController@updateCurrency'); // For updating currency in user settings
 Route::post('updateDay', 'UpdateController@updateIncomeDay'); // For updating income day in user settings
@@ -30,3 +31,4 @@ Route::post('updateDay', 'UpdateController@updateIncomeDay'); // For updating in
 Route::post('addExpense', 'AddController@addExpense'); // Add new expense
 Route::post('addIncome', 'AddController@addIncome'); // Add income
 Route::post('addBudget', 'AddController@addBudget'); // Add budget categories amounts
+

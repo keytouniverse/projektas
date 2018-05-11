@@ -54,7 +54,8 @@ class PagesController extends Controller
         return view('currency_converter');
     }
     public function report(){
-        return view('report');
+        $users = DB::select('select * from expenses');
+        return view('report', compact('users'));
     }
     public function graphs(){
         return view('graphs');
