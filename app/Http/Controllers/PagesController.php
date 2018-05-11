@@ -25,6 +25,9 @@ class PagesController extends Controller
         $income = DB::table('budget')->where('users_id', $userId)->value('total_income');
         return view('expenses', compact('categories','totalExpenses','income'));
     }
+    public function dailyExpenses(){
+        
+    }
     public function budget(){
         return view('budget');
     }
