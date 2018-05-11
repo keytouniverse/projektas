@@ -21,7 +21,7 @@ class CreateExpensesTable extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->index();
-            $table->timestamp('created_at')->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->double('amount');
             $table->integer('categories_id')->unsigned();
             $table->integer('users_id')->unsigned();

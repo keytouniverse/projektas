@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('currency')->default('EUR');
             $table->integer('income_day')->default(1);
+            $table->double('total_income')->default(0);
         });
     }
 

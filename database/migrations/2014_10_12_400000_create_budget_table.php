@@ -21,8 +21,7 @@ class CreateBudgetTable extends Migration
         Schema::create('budget', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->index();
-            $table->timestamps();
-            $table->double('total_income');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
         });

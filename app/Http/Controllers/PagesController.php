@@ -22,20 +22,52 @@ class PagesController extends Controller
         $userId = Auth::id();
         $categories = DB::table('categories')->get(); // Categories list from DB
         $totalExpenses = DB::table('expenses')->where('users_id', $userId)->sum('amount'); // Gets sum of all expenses
-        $income = DB::table('budget')->where('users_id', $userId)->value('total_income');
-        return view('expenses', compact('categories','totalExpenses','income'));
+        $income = DB::table('users')->where('id', $userId)->value('total_income');
+
+        $categoriesCount = DB::table('categories')->count();
+        $categoriesAmount = [];
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesAmount[$i] = DB::table('expenses')->where('users_id', $userId)->where('categories_id', $i)->sum('amount');
+        }
+        return view('expenses', compact('categories','totalExpenses','income',
+                        'categoriesCount','categoriesAmount'));
     }
     public function dailyExpenses(){
         
     }
     public function budget(){
-        return view('budget');
+        $userId = Auth::id();
+        $totalIncome = DB::table('users')->where('id', $userId)->value('total_income');
+
+        $categoriesCount = DB::table('categories')->count();
+        $categoriesNames = [];
+        $budgetAmounts = [];
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
+        }
+        $budgetId = DB::table('budget')->where('users_id', $userId)->value('id');
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $budgetAmounts[$i] = DB::table('budgets_categories')->where('budget_id', $budgetId)->
+                                where('categories_id', $i)->value('amount');
+        }
+        return view('budget', compact('totalIncome', 'categoriesNames','categoriesCount',
+                    'budgetAmounts'));
     }
     public function currency_converter(){
         return view('currency_converter');
     }
     public function report(){
-        return view('report');
+        $expensesCount = DB::table('expenses')->count();
+        $categoriesNames = [];
+        for ($i = 1;$i<=$expensesCount;$i++){
+            $categoriesID[$i] = DB::table('expenses')->where('id',$i)->value('categories_id');
+        }
+        for ($i = 1;$i<=$expensesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id',$categoriesID[$i])->value('name');
+        }
+        $users = DB::select('select * from expenses');
+        $categories = DB::select('select * from categories');
+        return view('report', compact('users','categoriesNames'));
     }
     public function graphs(){
         return view('graphs');

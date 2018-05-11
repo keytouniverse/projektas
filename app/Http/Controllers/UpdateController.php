@@ -9,8 +9,7 @@ use Auth;
 
 class UpdateController extends Controller
 {
-    public function updateCurrency(Request $request)
-    {
+    public function updateCurrency(Request $request){
         $currency = $request->input('currency');
         $userId = Auth::id();
         $data=array('currency'=>$currency);
@@ -20,8 +19,7 @@ class UpdateController extends Controller
             ->update(['currency' => $currencyy]);
         return back();
     }
-    public function updateIncomeDay(Request $request)
-    {
+    public function updateIncomeDay(Request $request){
         $incomeday = $request->input('Income_day');
         $userId = Auth::id();
         $data=array('currency'=>$incomeday);
@@ -29,6 +27,17 @@ class UpdateController extends Controller
         DB::table('users')
             ->where('id', $userId)
             ->update(['income_day' => $incomedayy]);
+        return back();
+    }
+    public function updateBudgetValues(Request $request){
+        $userId = Auth::id();
+        $budgetId = DB::table('budget')->where('users_id', $userId)->value('id');
+        $data = $request->all();
+        $categoriesCount = DB::table('categories')->count();
+        for ($count=1;$count<=$categoriesCount;$count++){
+            DB::table('budgets_categories')->where('budget_id', $budgetId)->where('categories_id', $count)->
+                update(['amount'=>$data[$count]]);
+        }
         return back();
     }
 }

@@ -19,6 +19,7 @@
     left: -300px;
     font-size: 16px;
     color: black;
+    padding-top: 30px;
 }
 
 input[type="text"] {
@@ -32,7 +33,7 @@ input[type="text"] {
 }
 
 input[type="text1"] {
-    width:150px;
+    width:200px;
     height:30px;
     border-radius:5px;
     background-color: lightblue;
@@ -43,14 +44,19 @@ input[value="Edit"]
 {
     width:50px;
     position: absolute;
-    background-color: lightblue;
+    background-color: cornflowerblue;
     right: -265px;
 }
 
- input[value="Submit"]
+ input[value="Add"]
  {
      width:65px;
-     background-color: lightblue;
+     background-color: cornflowerblue;
+ }
+ input[value="Confirm"]
+ {
+     width:65px;
+     background-color: cornflowerblue;
  }
 
 </style>
@@ -62,55 +68,33 @@ input[value="Edit"]
     <div class="container">
         <div class="row justify-content-center">
             <div class="income">
-                <text1> Income: </text1>
+                <form action = "/addIncome" method = "post">
+                    {{ csrf_field() }}
+                <text1> Add to income: </text1>
                 <br>
                 <input type="text1" name="income">
-                <input type="submit" value="Submit">
-                <br><br>
+                <input type="submit" value="Add">
+                </form>
                 <br>
-                <text1> Total: </text1>
+                <text1> Total income this month: </text1>
                 <br>
-                <input type="text1" name="Totalincome">
+                <input type="text1" name="Totalincome" value={{$totalIncome}}>
             </div>
                 <div class="categories">
-                   
+                   <form action="/addBudget" method="post" name="budget">
+                       {{ csrf_field() }}
                         <text2>
                             Create a Budget
                             <br><br>
-                            Food & Groceries:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Emergency Fund:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Housing:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Utilities:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Personal Care:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Entertainment:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br><br> Transport:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Health Care:
-                            <input type="text" name="income" >
-                            <input type="submit" value="Edit">
-                            <br> <br>Pets:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br> Other:
-                            <input type="text" name="income">
-                            <input type="submit" value="Edit">
-                            <br><br>
-                            <input type="submit" value="Submit">
+                            @for($i=1;$i<=$categoriesCount;$i++)
+                                {{$categoriesNames[$i]}}
+                                <input type="text" name={{$i}} value={{$budgetAmounts[$i]}}>
+                                {{--<input type="submit" value="Edit">--}}
+                                <br><br>
+                            @endfor
+                            <input type="submit" value="Confirm">
                         </text2>
-            
+                   </form>
                 </div>
         </div>
     </div>

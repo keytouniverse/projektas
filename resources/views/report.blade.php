@@ -30,8 +30,22 @@ tr:first-child {
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
                     <script>
-        $(document).ready(function () {
-            $("#datepicker").datepicker();
+
+            $("#datepicker_from").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: 'DD-MM-YYYY',
+                startDate: '01-10-2017',
+                onSelect: function (dateText) {
+                    $("#datepicker_to").datepicker('option','minDate',dateText);
+                }
+        });
+        $("#datepicker_to").datepicker({
+           changeMonth : true,
+           changeYear: true,
+            format: 'DD-MM-YYYY',
+            endDate: '01-11-2017',
+
         });
     </script>
     <script>
@@ -45,44 +59,36 @@ tr:first-child {
         });
     </script>
     <!--end of Navigation bar-->
-    <pad5>
-        <Label>From</Label>
 
-        <input type="date" />
+    <pad5>
+
+        <Label>From</Label>
+        <form action ="/showreports" method = "get">
+        <input type="date" name="from"/>
 
         <Label>To</Label>
-        <input type="date" />
+        <input type="date" name="to"/>
         <input type="submit" value="Show">
-        <br>
-        <br>
-        <br>
-        <table style="width:100%">
+            <table style="width:100%">
+                <tr>
+                    <th>Nr</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+                <!--{{$sumting = 1}};-->
+        @foreach($users as $user)
             <tr>
-                <th>Nr</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>50</td>
-                <td>2018-04-02</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Transport</td>
-                <td>13.5</td>
-                <td>2018-03-29</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Housing</td>
-                <td>150.4</td>
-                <td>2018-03-15</td>
-            </tr>
-        </table>
 
+                <td>{{$user->id}}</td>
+                <td>{{$categoriesNames[$sumting]}}</td>
+                <td>{{$user->amount}}</td>
+                <td>{{$user->created_at}}</td>
+                <!--{{$sumting = $sumting + 1}};-->
+            </tr>
+        @endforeach
+            </table>
+        </form>
     </pad5>
                 </div>
             </div>
