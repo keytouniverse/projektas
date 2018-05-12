@@ -23,7 +23,7 @@ Route::get('/budget', 'PagesController@budget');
 Route::get('/currency_converter', 'PagesController@currency_converter');
 Route::get('/report', 'PagesController@report');
 Route::get('/graphs', 'PagesController@graphs');
-Route::get('/showreport', 'UpdateController@showreport');
+Route::get('/showReport', 'PagesController@showReport');
 
 
 Route::post('updateCurrency', 'UpdateController@updateCurrency'); // For updating currency in user settings

@@ -40,9 +40,8 @@ class UpdateController extends Controller
         }
         return back();
     }
-    public function showreport(Request $request)
+    /*public function showreport(Request $request)
     {
-
         $from = $request->input('from');
         $to = $request->input('to');
         $str_start_date = date("Y-m-d H:i:s",strtotime($from));
@@ -53,5 +52,5 @@ class UpdateController extends Controller
             ->select('expenses.*')
             ->get();
         return view('showreport', compact('results'));
-    }
+    }*/
 }

@@ -63,7 +63,7 @@ tr:first-child {
     <pad5>
 
         <Label>From</Label>
-        <form action ="/showreport" method = "get">
+        <form action ="/showReport" method = "get">
         <input type="date" name="from"/>
 
         <Label>To</Label>
@@ -81,7 +81,7 @@ tr:first-child {
             <tr>
 
                 <td>{{$user->id}}</td>
-                <td>{{$categoriesNames[$sumting]}}</td>
+                <td>{{$categoriesNames[$user->categories_id]}}</td>
                 <td>{{$user->amount}}</td>
                 <td>{{$user->created_at}}</td>
                 <!--{{$sumting = $sumting + 1}};-->

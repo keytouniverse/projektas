@@ -57,16 +57,22 @@ class PagesController extends Controller
         return view('currency_converter');
     }
     public function report(){
+        $userId = Auth::id();
         $expensesCount = DB::table('expenses')->count();
         $categoriesNames = [];
         for ($i = 1;$i<=$expensesCount;$i++){
             $categoriesID[$i] = DB::table('expenses')->where('id',$i)->value('categories_id');
         }
-        for ($i = 1;$i<=$expensesCount;$i++){
+        /*for ($i = 1;$i<=$expensesCount;$i++){
             $categoriesNames[$i] = DB::table('categories')->where('id',$categoriesID[$i])->value('name');
-        }
-        $users = DB::select('select * from expenses');
+        }*/
 
+        $categoriesCount = DB::table('categories')->count();
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
+        }
+        //$users = DB::select('select * from expenses');
+        $users = DB::table('expenses')->where('users_id', $userId)->get();
         return view('report', compact('users','categoriesNames'));
     }
     public function graphs(){
@@ -75,7 +81,18 @@ class PagesController extends Controller
     public function welcome(){
         return view('welcome');
     }
-    public function showreport(){
-        return view('showreport');
+    public function showReport(Request $request){
+        $userId = Auth::id();
+        $categoriesCount = DB::table('categories')->count();
+        for ($i = 1;$i<=$categoriesCount;$i++){
+            $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
+        }
+        $from = $request->input('from');
+        $to = $request->input('to');
+        $str_start_date = date("Y-m-d H:i:s",strtotime("$from 00:00:00"));
+        $str_end_date = date("Y-m-d H:i:s",strtotime("$to 23:59:59"));
+        $users = DB::table('expenses')->where('users_id', $userId)->where('created_at', '>=',$str_start_date)->
+                    where('created_at', '<=',$str_end_date)->get();
+        return view('report', compact('users','categoriesNames'));
     }
 }
