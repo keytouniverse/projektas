@@ -66,7 +66,7 @@ class PagesController extends Controller
             $categoriesNames[$i] = DB::table('categories')->where('id',$categoriesID[$i])->value('name');
         }
         $users = DB::select('select * from expenses');
-        $categories = DB::select('select * from categories');
+
         return view('report', compact('users','categoriesNames'));
     }
     public function graphs(){
@@ -74,5 +74,8 @@ class PagesController extends Controller
     }
     public function welcome(){
         return view('welcome');
+    }
+    public function showreport(){
+        return view('showreport');
     }
 }

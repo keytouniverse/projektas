@@ -63,7 +63,7 @@ tr:first-child {
     <pad5>
 
         <Label>From</Label>
-        <form action ="/showreports" method = "get">
+        <form action ="/showreport" method = "get">
         <input type="date" name="from"/>
 
         <Label>To</Label>
