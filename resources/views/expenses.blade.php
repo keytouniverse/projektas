@@ -44,15 +44,6 @@
     border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
     }
-    select option:checked:after {
-    content: attr(title);
-    background: #666;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    border: none;
-}
-
 
    .piechart{
        position: absolute;
@@ -103,7 +94,7 @@
             <text1> Your spent money: </text1>
             <br>
 
-            <input type="text" name="amount">
+            <input type="text" name="amount" required>
             <br>
 
 
