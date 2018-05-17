@@ -89,14 +89,15 @@ input[type="submit"] {
 
         });
     </script>
-         <div class="atitraukti">
+        
         <form action ="/showReport" method = "get">
+        <div class="atitraukti">
         <Label>From</Label> 
         <input type="date" name="from"/>
         <Label>To</Label>
         <input type="date" name="to"/>
-
         </div>
+
         <br> <br>
         <div class="atitraukti2">
         <input type="submit" value="Show">
