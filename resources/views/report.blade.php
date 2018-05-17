@@ -6,25 +6,66 @@
  * Time: 02:32
 -->
 <style>
+
     table, th, td {
     border: 1px solid black;
+    border-radius: 100px;
 }
+table{
+    border: 3px solid black;
+
+ }
 th{
-    text-align: left;
+    text-align: center;
+}
+td{
+    height: 35px;
 }
 th, td {
-    text-align: left;
+    text-align: center;
 }
-tr:nth-child(even) {background-color:#CEECF5;}
+tr:nth-child(even) {background-color: #E0ECF8;}
+tr:nth-child(odd) {background-color: #E0F2F7;}
+
+tr:hover {background-color: #81BEF7;}
+
 tr:first-child {
-    background-color: #58ACFA;
+    height: 35px;
+     border: 3px solid black;
+    background-color: #81BEF7;
     font-weight: bold;
+    text-align: center;
+}
+Label{
+    font-size: 15px;
+        color: black;
+        font-weight: bold;
+}
+input[type="submit"] {
+        margin-left:10px;
+        border-radius: 100px;
+        background-color: #0B3861;
+        color: white;
+        font-weight: bold;
+        width: 100px;  
+        height: 30px;
+    }
+.atitraukti
+{
+      position: fixed;
+      left: 37%; 
+}
+.atitraukti2
+{
+      position: fixed;
+      left: 45%; 
 }
     </style>
 <title> Report</title>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+        <br> <br>
             <div class="col-md-8">
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -48,27 +89,19 @@ tr:first-child {
 
         });
     </script>
-    <script>
-                $(function () {
-                    $("#nav-placeholder").load("meniu.html");
-                });
-            </script>
- <script>
-        $(function () {
-            $("#nav-placeholder").load("meniu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <pad5>
-
-        <Label>From</Label>
+         <div class="atitraukti">
         <form action ="/showReport" method = "get">
+        <Label>From</Label> 
         <input type="date" name="from"/>
-
         <Label>To</Label>
         <input type="date" name="to"/>
+
+        </div>
+        <br> <br>
+        <div class="atitraukti2">
         <input type="submit" value="Show">
+        </div>
+        <br> <br>
             <table style="width:100%">
                 <tr>
                     <th>Nr</th>
