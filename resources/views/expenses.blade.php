@@ -17,39 +17,92 @@
         border-radius:5px;
         margin-left:2px;
         position: relative;
-        background-color: #c6c8ca;
+        background-color: #F2F2F2;
     }
     input[type="text2"] {
+        color: black;
         border-radius:5px;
         margin-left:50px;
         position: absolute;
         left: 90px;
-        background-color: #c6c8ca;
+        text-align: center;
+        background-color: #E6E6E6;
+        width: 100px;  
+    }
+    text1
+    {
+        font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     }
     select {
     position: absolute;
     right: 0 px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+    width: 170px; 
+    height: 30px; 
     border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    select option:checked:after {
+    content: attr(title);
+    background: #666;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border: none;
 }
+
+
    .piechart{
        position: absolute;
        top: 20px;
        left: 400px;
    }
+   input[type="submit"] {
+        
+        position: relative;
+        margin-left:180px;
+        border-radius: 100px;
+        background-color: #0B3861;
+        color: white;
+        font-weight: bold;
+        width: 150px;  
+        height: 30px;
+    }
+
+    header
+    {
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+        float: none;
+        position: fixed;
+        left: 50%; 
+        margin-bottom: 300px;
+
+    }
+    
 
     </style>
     <title>Expenses</title>
 @section('content')
+
     <div class="container">
+  
         <div class="row justify-content-center">
             <div class="col-md-8">
+            
                 <form action = "/addExpense" method = "post">
+                <header>Expenses</header>
+                <br>
+                <br>
+
                     {{ csrf_field() }}
             <br>
             <text1> Your spent money: </text1>
             <br>
+
             <input type="text" name="amount">
             <br>
 
@@ -57,14 +110,14 @@
             <!--DropDown list of categories-->
 
             <br>
+
             <select name="category">
                 @foreach($categories as $category)
                     <option value="{{$category->id}}" name="{{$category->id}}">{{$category->name}}</option> // Categories from DB
                 @endforeach
             </select>
-            <br>
-            <br>
-            <input type="submit" value="Submit">
+
+            <input type="submit" value="ADD">
             </form>
 
                     
@@ -73,13 +126,13 @@
         <text1>  Summary: </text1>
             <br>
         <br> Income:
-        <input type="text2" value={{$income}} id="income">
+        <input type="text2" value={{$income}} id="income" disabled>
         <br>
         <br> Expenses total:
-        <input type="text2" value={{$totalExpenses}} id="expenses">
+        <input type="text2" value={{$totalExpenses}} id="expenses" disabled>
         <br>
         <br> Balance:
-        <input type="text2" value={{$income-$totalExpenses}} id="balance">
+        <input type="text2" value={{$income-$totalExpenses}} id="balance" disabled>
             </div>
             <div class="piechart"id="piechart">
 
