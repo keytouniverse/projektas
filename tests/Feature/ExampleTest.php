@@ -38,6 +38,21 @@ class ExampleTest extends TestCase
         echo "\nRegistration is working as intended...";
     }
 
+    public function testBudget()
+    {
+        $user = factory(User::class)->create();
+        $income = 100;
+        $this->actingAs($user)
+            ->withSession(['foo' => 'bar'])
+            ->visit('/budget')
+            ->type($income,'income')
+            ->press('Add')
+            ->visit('/budget')
+            // Checks whether the added income is visible on the Budget page
+            ->see($income);
+        echo "\n'Budget' page functions correctly...";
+    }
+
     public function testExpenses()
     {
         $user = factory(User::class)->create();
@@ -59,4 +74,22 @@ class ExampleTest extends TestCase
             ->see($spentMoney1+$spentMoney2);
         echo "\n'Expenses' page functions correctly...";
     }
+
+    public function testReport()
+    {
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)
+            ->withSession(['foo' => 'bar'])
+            // Visits and adds some values in the Expenses page
+            ->visit('/expenses')
+            ->type('100','amount')
+            ->select(3,'category')
+            ->press('ADD')
+            // Visits 'Budget' and checks if the added value is shown anywhere on the page
+            ->visit('/budget')
+            ->see('100');
+        echo "\n'Report' page shows correct data.";
+    }
+
 }
