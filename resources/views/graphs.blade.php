@@ -66,29 +66,33 @@
 @section('content')
 
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
+
             <br>
             <br>
+            <!-- DROP DOWN-->
             <div class="dropdown4">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown4" aria-haspopup="true" aria-expanded="false">
-                    Choose a month
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">January</a>
-                    <a class="dropdown-item" href="#">February</a>
-                    <a class="dropdown-item" href="#">March</a>
-                    <a class="dropdown-item" href="#">April</a>
-                    <a class="dropdown-item" href="#">May</a>
-                    <a class="dropdown-item" href="#">June</a>
-                    <a class="dropdown-item" href="#">July</a>
-                    <a class="dropdown-item" href="#">August</a>
-                    <a class="dropdown-item" href="#">September</a>
-                    <a class="dropdown-item" href="#">October</a>
-                    <a class="dropdown-item" href="#">November</a>
-                    <a class="dropdown-item" href="#">December</a>
-                </div>
-            </div>
+            <select>
+
+            <option value="foodandfroceries">January</option>
+            <option value="emergencyfund">February</option>
+            <option value="housing">March</option>
+            <option value="utilities">April</option>
+            <option value="personalcare">May</option>
+            <option value="entertainment">June</option>
+            <option value="transport">July</option>
+            <option value="healthcare">August</option>
+            <option value="pets">September</option>
+            <option value="other">October</option>
+            <option value="other">November</option>
+            <option value="other">December</option>
+
+</select>
+             </div> 
+             <!-- DROP DOWN-->
+              <!-- DROP DOWN-->
             <input type="submit" value="Show">
             <div class="dropdown2">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,7 +113,7 @@
                     <a class="dropdown-item" href="#">2018-11-10</a>
                 </div>
             </div>
-
+         <!-- DROP DOWN-->
             <div class="dropdown3">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     To
@@ -129,6 +133,7 @@
                     <a class="dropdown-item" href="#">2018-12-10</a>
                 </div>
             </div>
+             <!-- DROP DOWN-->
             <input type="submit" value="Submit">
             <div class="linechart"id="linechart">
                 <script type="text/javascript">
@@ -209,8 +214,9 @@
                 </div>
                 </body>
             </div>
+             <!-- DROP DOWN-->
 
-<div class="ColumnChart"id="ColumnChart">
+    <div class="ColumnChart"id="ColumnChart">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
@@ -246,9 +252,7 @@
         }
     </script>
 
-    <body>
     <div id="columnchart_material" style="width: 800px; height: 400px;"></div>
-    </body>
 </div>
 
         </div>
