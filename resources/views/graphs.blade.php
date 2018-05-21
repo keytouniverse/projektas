@@ -18,8 +18,8 @@
     input[value="Show"]
     {
         border-radius: 100px;
-        background-color: #0B3861;
-        color: white;
+        background-color: #81BEF7;
+        color: black;
         font-weight: bold;
         width: 100px;
         height: 30px;
@@ -61,12 +61,32 @@
         left: 40%;
         margin-bottom: 300px;
     }
+    select{
+
+        border-radius: 10px;
+        background-color: #81BEF7;
+        color: black;
+        font-weight: bold;
+        font-size: 30px;
+        width: 120px;  
+        height: 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: 5px;
+        border: 1px solid #dfdfdf;
+        text-align: center;
+    }
+
+
 
 </style>
+<title>Graphs & Diagrams</title>
 @section('content')
 
 <div class="container">
-
     <div class="row justify-content-center">
         <div class="col-md-8">
 
