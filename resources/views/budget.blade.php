@@ -118,7 +118,7 @@ button{
                 <br>
                 <text1> Total income this month: </text1>
                 <br>
-                <input type="text3" name="Totalincome" value={{$totalIncome}} disabled>
+                <input type="text3" name="Totalincome" value={{$totalIncome}} readonly>
             </div>
             <br>
                 <div class="categories">
