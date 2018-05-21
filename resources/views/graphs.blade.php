@@ -13,7 +13,7 @@
 
     .dropdown3{
         position: absolute;
-        right: 270px;
+        right: 200px;
     }
     input[value="Show"]
     {
@@ -30,13 +30,13 @@
     input[value="Submit"]
     {
         border-radius: 100px;
-        background-color: #0B3861;
-        color: white;
+        background-color:  #81BEF7;
+        color: black;
         font-weight: bold;
         width: 100px;
         height: 30px;
         position: absolute;
-        right: 150px;
+        right: 80px;
     }
 
     .linechart{
@@ -89,69 +89,65 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
             <br>
             <br>
             <!-- DROP DOWN-->
             <div class="dropdown4">
             <select>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="February">February</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
 
-            <option value="foodandfroceries">January</option>
-            <option value="emergencyfund">February</option>
-            <option value="housing">March</option>
-            <option value="utilities">April</option>
-            <option value="personalcare">May</option>
-            <option value="entertainment">June</option>
-            <option value="transport">July</option>
-            <option value="healthcare">August</option>
-            <option value="pets">September</option>
-            <option value="other">October</option>
-            <option value="other">November</option>
-            <option value="other">December</option>
-
-</select>
+           </select>
              </div> 
              <!-- DROP DOWN-->
               <!-- DROP DOWN-->
             <input type="submit" value="Show">
+
             <div class="dropdown2">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    From
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2017-12-10</a>
-                    <a class="dropdown-item" href="#">2018-01-10</a>
-                    <a class="dropdown-item" href="#">2018-02-10</a>
-                    <a class="dropdown-item" href="#">2018-03-10</a>
-                    <a class="dropdown-item" href="#">2018-04-10</a>
-                    <a class="dropdown-item" href="#">2018-05-10</a>
-                    <a class="dropdown-item" href="#">2018-06-10</a>
-                    <a class="dropdown-item" href="#">2018-07-10</a>
-                    <a class="dropdown-item" href="#">2018-08-10</a>
-                    <a class="dropdown-item" href="#">2018-09-10</a>
-                    <a class="dropdown-item" href="#">2018-10-10</a>
-                    <a class="dropdown-item" href="#">2018-11-10</a>
-                </div>
+            <label> From </label>
+                <select>
+                <option value="December">2017-12-10</option>
+                <option value="December">2018-01-10</option>
+                <option value="December">2018-02-10</option>
+                <option value="December">2018-03-10</option>
+                <option value="December">2018-04-10</option>
+                <option value="December">2018-05-10</option>
+                <option value="December">2018-06-10</option>
+                <option value="December">2018-07-10</option>
+                <option value="December">2018-08-10</option>
+                <option value="December">2018-09-10</option>
+                <option value="December">2018-10-10</option>
+                <option value="December">2018-11-10</option>
+                </select>
             </div>
-         <!-- DROP DOWN-->
+                 <!-- DROP DOWN-->
+
             <div class="dropdown3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    To
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2018-01-10</a>
-                    <a class="dropdown-item" href="#">2018-02-10</a>
-                    <a class="dropdown-item" href="#">2018-03-10</a>
-                    <a class="dropdown-item" href="#">2018-04-10</a>
-                    <a class="dropdown-item" href="#">2018-05-10</a>
-                    <a class="dropdown-item" href="#">2018-06-10</a>
-                    <a class="dropdown-item" href="#">2018-07-10</a>
-                    <a class="dropdown-item" href="#">2018-08-10</a>
-                    <a class="dropdown-item" href="#">2018-09-10</a>
-                    <a class="dropdown-item" href="#">2018-10-10</a>
-                    <a class="dropdown-item" href="#">2018-11-10</a>
-                    <a class="dropdown-item" href="#">2018-12-10</a>
-                </div>
+            <label> To </label>
+                <select>
+                <option value="December">2018-01-10</option>
+                <option value="December">2018-02-10</option>
+                <option value="December">2018-03-10</option>
+                <option value="December">2018-04-10</option>
+                <option value="December">2018-05-10</option>
+                <option value="December">2018-06-10</option>
+                <option value="December">2018-07-10</option>
+                <option value="December">2018-08-10</option>
+                <option value="December">2018-09-10</option>
+                <option value="December">2018-10-10</option>
+                <option value="December">2018-11-10</option>
+                <option value="December">2018-12-10</option>
+                </select>
             </div>
              <!-- DROP DOWN-->
             <input type="submit" value="Submit">
