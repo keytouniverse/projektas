@@ -63,23 +63,13 @@ class PagesController extends Controller
         for ($i = 1;$i<=$expensesCount;$i++){
             $categoriesID[$i] = DB::table('expenses')->where('id',$i)->value('categories_id');
         }
-        /*for ($i = 1;$i<=$expensesCount;$i++){
-            $categoriesNames[$i] = DB::table('categories')->where('id',$categoriesID[$i])->value('name');
-        }*/
 
         $categoriesCount = DB::table('categories')->count();
         for ($i = 1;$i<=$categoriesCount;$i++){
             $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
         }
-        //$users = DB::select('select * from expenses');
         $users = DB::table('expenses')->where('users_id', $userId)->get();
         return view('report', compact('users','categoriesNames'));
-    }
-    public function graphs(){
-        return view('graphs');
-    }
-    public function welcome(){
-        return view('welcome');
     }
     public function showReport(Request $request){
         $userId = Auth::id();
@@ -92,7 +82,33 @@ class PagesController extends Controller
         $str_start_date = date("Y-m-d H:i:s",strtotime("$from 00:00:00"));
         $str_end_date = date("Y-m-d H:i:s",strtotime("$to 23:59:59"));
         $users = DB::table('expenses')->where('users_id', $userId)->where('created_at', '>=',$str_start_date)->
-                    where('created_at', '<=',$str_end_date)->get();
+        where('created_at', '<=',$str_end_date)->get();
         return view('report', compact('users','categoriesNames'));
+    }
+    public function graphs(){
+        $monthName = "January";
+        $userId = Auth::id();
+        $monthExpenses = [];
+        for ($i = 1;$i <= 31;$i++) {
+            $monthExpenses[$i] = DB::table('expenses')->where('users_id', $userId)->whereMonth('created_at', '01')->
+                                    whereDay('created_at', $i)->sum('amount');
+        }
+        return view('graphs', compact('monthExpenses','monthName'));
+    }
+    public function graphByMonth(Request $request){
+        $userId = Auth::id();
+        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                    'November', 'December'];
+        $month = $request->input('month');
+        $monthExpenses = [];
+        for ($i = 1;$i <= 31;$i++) {
+            $monthExpenses[$i] = DB::table('expenses')->where('users_id', $userId)->whereMonth('created_at', $month)->
+            whereDay('created_at', $i)->sum('amount');
+        }
+        $monthName = $months[$month-1];
+        return view('graphs', compact('monthExpenses','monthName'));
+    }
+    public function welcome(){
+        return view('welcome');
     }
 }

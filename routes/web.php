@@ -23,6 +23,7 @@ Route::get('/budget', 'PagesController@budget');
 Route::get('/currency_converter', 'PagesController@currency_converter');
 Route::get('/report', 'PagesController@report');
 Route::get('/graphs', 'PagesController@graphs');
+Route::get('/graphByMonth', 'PagesController@graphByMonth');
 Route::get('/showReport', 'PagesController@showReport');
 
 
