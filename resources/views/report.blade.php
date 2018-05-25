@@ -75,8 +75,8 @@ input[type="submit"] {
             $("#datepicker_from").datepicker({
                 changeMonth: true,
                 changeYear: true,
-                format: 'DD-MM-YYYY',
-                startDate: '01-10-2017',
+                format: 'YYYY-MM-DD',
+                startDate: '2018-01-01',
                 onSelect: function (dateText) {
                     $("#datepicker_to").datepicker('option','minDate',dateText);
                 }
@@ -84,18 +84,18 @@ input[type="submit"] {
         $("#datepicker_to").datepicker({
            changeMonth : true,
            changeYear: true,
-            format: 'DD-MM-YYYY',
-            endDate: '01-11-2017',
-
+            format: 'YYYY-MM-DD',
+            endDate: '2018-01-31',
+            
         });
     </script>
         
         <form action ="/showReport" method = "get">
         <div class="atitraukti">
         <Label>From</Label> 
-        <input type="date" name="from"/>
+        <input type="date" name="from" value="{{$from}}"/>
         <Label>To</Label>
-        <input type="date" name="to"/>
+        <input type="date" name="to" value="{{$to}}"/>
         </div>
 
         <br> <br>

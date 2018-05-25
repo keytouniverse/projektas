@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use Auth;
+use Carbon\Carbon;
 
 class PagesController extends Controller
 {
@@ -69,7 +70,10 @@ class PagesController extends Controller
             $categoriesNames[$i] = DB::table('categories')->where('id', $i)->value('name');
         }
         $users = DB::table('expenses')->where('users_id', $userId)->get();
-        return view('report', compact('users','categoriesNames'));
+
+        $from = "2018-01-01";
+        $to = Carbon::today()->toDateString();
+        return view('report', compact('users','categoriesNames','from','to'));
     }
     public function showReport(Request $request){
         $userId = Auth::id();
@@ -83,7 +87,7 @@ class PagesController extends Controller
         $str_end_date = date("Y-m-d H:i:s",strtotime("$to 23:59:59"));
         $users = DB::table('expenses')->where('users_id', $userId)->where('created_at', '>=',$str_start_date)->
         where('created_at', '<=',$str_end_date)->get();
-        return view('report', compact('users','categoriesNames'));
+        return view('report', compact('users','categoriesNames','from','to'));
     }
     public function graphs(){
         $month = 1;

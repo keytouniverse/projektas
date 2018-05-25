@@ -8,12 +8,12 @@
 
     .dropdown2{
         position: absolute;
-        right: 370px;
+        right: 300px;
     }
 
     .dropdown3{
         position: absolute;
-        right: 200px;
+        right: 150px;
     }
     input[value="Show"]
     {
@@ -36,7 +36,7 @@
         width: 100px;
         height: 30px;
         position: absolute;
-        right: 80px;
+        right: 30px;
     }
 
     .linechart{
@@ -108,7 +108,6 @@
             </form>
              <!-- DROP DOWN-->
               <!-- DROP DOWN-->
-
 
             <div class="dropdown2">
             <label> From </label>
@@ -199,7 +198,6 @@
                 </body>
             </div>
              <!-- DROP DOWN-->
-
     <div class="ColumnChart"id="ColumnChart">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -223,8 +221,7 @@
 
             var options = {
                 chart: {
-                    title: 'Expences with categories',
-
+                    title: 'Expenses with categories',
                 },
                 backgroundColor: 'transparent',
                 fontSize: 15
