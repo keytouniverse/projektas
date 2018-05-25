@@ -95,19 +95,13 @@
             <form action="/graphByMonth" method="get">
             <div class="dropdown4">
             <select name="month">
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-
+                @for ($i = 1; $i<=12; $i++)
+                    @if($i == $month){
+                    <option selected="selected" value={{$month}}>{{$months[$i-1]}}</option>
+                    @else
+                        <option value={{$i}}>{{$months[$i-1]}}</option>
+                    @endif
+                @endfor
            </select>
              </div>
                 <input type="submit" value="Show">
@@ -164,7 +158,7 @@
                                 theme: "light2", //"light1", "dark1", "dark2"
 
                                 title: {
-                                    text: "Daily Spendings of {{$monthName}}",
+                                    text: "Daily Spendings of {{$months[$month-1]}}",
                                     fontSize: 20
                                 },
                                 exportEnabled: true,

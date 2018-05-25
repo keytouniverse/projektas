@@ -86,14 +86,16 @@ class PagesController extends Controller
         return view('report', compact('users','categoriesNames'));
     }
     public function graphs(){
-        $monthName = "January";
+        $month = 1;
+        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+            'November', 'December'];
         $userId = Auth::id();
         $monthExpenses = [];
         for ($i = 1;$i <= 31;$i++) {
-            $monthExpenses[$i] = DB::table('expenses')->where('users_id', $userId)->whereMonth('created_at', '01')->
+            $monthExpenses[$i] = DB::table('expenses')->where('users_id', $userId)->whereMonth('created_at', $month)->
                                     whereDay('created_at', $i)->sum('amount');
         }
-        return view('graphs', compact('monthExpenses','monthName'));
+        return view('graphs', compact('monthExpenses','month', 'months'));
     }
     public function graphByMonth(Request $request){
         $userId = Auth::id();
@@ -105,8 +107,7 @@ class PagesController extends Controller
             $monthExpenses[$i] = DB::table('expenses')->where('users_id', $userId)->whereMonth('created_at', $month)->
             whereDay('created_at', $i)->sum('amount');
         }
-        $monthName = $months[$month-1];
-        return view('graphs', compact('monthExpenses','monthName'));
+        return view('graphs', compact('monthExpenses','month','months'));
     }
     public function welcome(){
         return view('welcome');
