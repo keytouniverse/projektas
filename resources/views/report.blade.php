@@ -9,7 +9,6 @@
 
     table, th, td {
     border: 1px solid black;
-    border-radius: 100px;
 }
 table{
     border: 3px solid black;

@@ -71,7 +71,6 @@
         position: fixed;
         left: 50%; 
         margin-bottom: 300px;
-
     }
     
 

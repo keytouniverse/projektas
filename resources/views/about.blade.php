@@ -10,8 +10,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">About</div>
+
                     <br></br>
                     <?php
                         echo "<h1>User Manual</h1>";
@@ -19,11 +18,18 @@
                     <br></br>
                     <?php
                         echo "<h2>1. Your Income </h2>";
-                        echo "<h>Set your income on the 'Budget' page.</h>";
+                        echo "<h>Set your income on the 'Budget' page.</h> <br>";
                     ?>
                     <html>
-                        <img src="/images/save_income.png" width="280" height="125" title="How to set income" alt="How to set income" />
+                        <img src="/images/budget.png" width="540" height="250" title="How to set income" alt="How to set income" />
+                        <br>  
                     </html>
+                    <?php
+                        echo "If you enter a small amount of income, enter the missing part in the 'Add to income:' field.<br>";
+                        echo "If you enter an excessive amount, enter the amount you want to deduct with the minus sign in the 'Add to income' field.<br>";
+                        echo "The amounts you enter are accumulated.<br>";
+                        
+                    ?>
                     <br></br>
                     <?php
                         echo "<h2>2. Expenses </h2>";
@@ -31,15 +37,10 @@
                         
                     ?>
                     <html>
-                        <img src="/images/add_expense.png" width="280" height="125" title="How to add expense" alt="How to add expense" />
+                        <img src="/images/expenses.png" width="540" height="250" title="How to add expense" alt="How to add expense" />
                     </html>
                     <br></br>
-                    <?php
-                        echo "If you enter a small amount of income, enter the missing part in the 'Add to income:' field.<br>";
-                        echo "If you enter an excessive amount, enter the amount you want to deduct with the minus sign in the 'Add to income' field.<br>";
-                        echo "The amounts you enter are accumulated.<br>";
-                        
-                    ?>
+
                     <br></br>
                      <?php
 
@@ -57,7 +58,7 @@
                         echo "Here you can see all expense records according to the selected date range.<br>";                      
                     ?>
                     <html>
-                        <img src="/images/add_expense.png" width="280" height="125" title="Report page" alt="Report page" />
+                        <img src="/images/report.png" width="540" height="250" title="Report page" alt="Report page" />
                     </html>
                     <br></br>
                     <?php
@@ -67,7 +68,7 @@
                         echo "The bar graph shows the difference between the planned spend on money and how much you actually spent on the selected time period.<br>";                      
                     ?>
                     <html>
-                        <img src="/images/add_expense.png" width="280" height="125" title="Diagrams" alt="Graphs & Diagrams" />
+                        <img src="/images/graphs.png" width="540" height="250" title="Diagrams" alt="Graphs & Diagrams" />
                     </html>
                     <br></br>
                      <?php
@@ -81,7 +82,5 @@
                     ?>
                 </div>
             </div>
-        </div>
-    </div>
 
 @endsection
