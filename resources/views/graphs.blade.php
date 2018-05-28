@@ -8,12 +8,12 @@
 
     .dropdown2{
         position: absolute;
-        right: 370px;
+        right: 300px;
     }
 
     .dropdown3{
         position: absolute;
-        right: 200px;
+        right: 150px;
     }
     input[value="Show"]
     {
@@ -36,7 +36,7 @@
         width: 100px;
         height: 30px;
         position: absolute;
-        right: 80px;
+        right: 30px;
     }
 
     .linechart{
@@ -92,26 +92,22 @@
             <br>
             <br>
             <!-- DROP DOWN-->
+            <form action="/graphByMonth" method="get">
             <div class="dropdown4">
-            <select>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="February">February</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-
+            <select name="month">
+                @for ($i = 1; $i<=12; $i++)
+                    @if($i == $month){
+                    <option selected="selected" value={{$month}}>{{$months[$i-1]}}</option>
+                    @else
+                        <option value={{$i}}>{{$months[$i-1]}}</option>
+                    @endif
+                @endfor
            </select>
-             </div> 
+             </div>
+                <input type="submit" value="Show">
+            </form>
              <!-- DROP DOWN-->
               <!-- DROP DOWN-->
-            <input type="submit" value="Show">
 
             <div class="dropdown2">
             <label> From </label>
@@ -161,7 +157,7 @@
                                 theme: "light2", //"light1", "dark1", "dark2"
 
                                 title: {
-                                    text: "Daily Spendings",
+                                    text: "Daily Spendings of {{$months[$month-1]}}",
                                     fontSize: 20
                                 },
                                 exportEnabled: true,
@@ -175,48 +171,19 @@
                                         fillOpacity: .4,
                                         lineThickness: 3,
                                         dataPoints: [
-                                            { x: 1, y: 71 },
-                                            { x: 2, y: 55 },
-                                            { x: 3, y: 50 },
-                                            { x: 4, y: 65 },
-                                            { x: 5, y: 105 },
-                                            { x: 6, y: 68 },
-                                            { x: 7, y: 28 },
-                                            { x: 8, y: 34 },
-                                            { x: 9, y: 14 },
-                                            { x: 10, y: 71 },
-                                            { x: 11, y: 55 },
-                                            { x: 12, y: 71 },
-                                            { x: 13, y: 50 },
-                                            { x: 14, y: 65 },
-                                            { x: 15, y: 105 },
-                                            { x: 16, y: 68 },
-                                            { x: 17, y: 28 },
-                                            { x: 18, y: 34 },
-                                            { x: 19, y: 14 },
-                                            { x: 20, y: 71 },
-                                            { x: 21, y: 71 },
-                                            { x: 22, y: 55 },
-                                            { x: 23, y: 50 },
-                                            { x: 24, y: 65 },
-                                            { x: 25, y: 105 },
-                                            { x: 26, y: 68 },
-                                            { x: 27, y: 28 },
-                                            { x: 28, y: 34 },
-                                            { x: 29, y: 14 },
-                                            { x: 30, y: 71 },
-                                            { x: 31, y: 71 },
-
+                                                @for($i=1;$i<=31;$i++)
+                                                    { x: {{$i}}, y: {{$monthExpenses[$i]}} },
+                                                @endfor
                                         ]
                                     }
                                 ],
                                 axisX:{
 
-                                    title:"day of the month ",
+                                    title:"Day of the month ",
                                 },
                                 axisY:{
-                                    title:"spent money",
-                                },
+                                    title:"Money spent",
+                            },
 
                                 backgroundColor: 'transparent',
                             });
@@ -231,7 +198,6 @@
                 </body>
             </div>
              <!-- DROP DOWN-->
-
     <div class="ColumnChart"id="ColumnChart">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -255,8 +221,7 @@
 
             var options = {
                 chart: {
-                    title: 'Expences with categories',
-
+                    title: 'Expenses with categories',
                 },
                 backgroundColor: 'transparent',
                 fontSize: 15

@@ -5,21 +5,79 @@
  * Date: 2018-03-22
  * Time: 00:03
  -->
+<style>
+    label{
+        font-size: 18px;
+        position: relative;
+        left: -350px;
+        font-weight: bold;
+    }
+
+    .selectbigger1{
+        position: relative;
+        left: -340px;
+        border-radius: 10px;
+        background-color: #81BEF7;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        width: 80px;
+        height: 30px;
+        text-align: center;
+    }
+
+    .selectbigger{
+        position: relative;
+        left: -300px;
+        border-radius: 10px;
+        background-color: #81BEF7;
+        color: black;
+        font-size: 15px;
+        font-weight: bold;
+        width: 80px;
+        height: 30px;
+        border: 1px solid #dfdfdf;
+        text-align: center;
+    }
+
+    input[value="Change"]
+    {
+        border-radius: 100px;
+        background-color:  #81BEF7;
+        color: black;
+        font-weight: bold;
+        width: 100px;
+        height: 30px;
+        position: relative;
+        left: -330px;
+    }
+
+    input[value="Select"]
+    {
+        border-radius: 100px;
+        background-color:  #81BEF7;
+        color: black;
+        font-weight: bold;
+        width: 100px;
+        height: 30px;
+        position: relative;
+        left: -290px;
+    }
+
+
+</style>
 @section('content')
 <div class="container" xmlns:padding-left="http://www.w3.org/1999/xhtml">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Settings</div>
                 <div class="card-body">
-
                     {{--Choose currency in user settings--}}
                     <?php $currencies = array('EUR', 'USD', 'GPB', 'RUB'); ?>
 
                     <form action = "/updateCurrency" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
                     <label>Default currency:</label>
-                        <select name="currency" class="selectbigger">
+                        <select name="currency" class="selectbigger1">
                             @foreach($currencies as $currency)
                                 @if($currency == $currentcurrency){
                                     <option selected="selected" value={{$currentcurrency}}>{{$currentcurrency}}</option>
@@ -54,7 +112,6 @@
                         </td>
                         {{--<button type="button" class="btn" >Select</button>--}}
                     </form>
-                </div>
             </div>
         </div>
     </div>
