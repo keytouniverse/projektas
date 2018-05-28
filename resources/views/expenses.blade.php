@@ -136,7 +136,9 @@
 
     // Draw the chart and set the chart values
     function drawChart() {
-        var data = google.visualization.arrayToDataTable([
+
+        @if($income-$totalExpenses<0)
+            var data = google.visualization.arrayToDataTable([
             ['Category', 'Percentage'],
             ['Food & Groceries', {{$categoriesAmount[1]}}],
             ['Emergency Fund', {{$categoriesAmount[2]}}],
@@ -148,12 +150,24 @@
             ['Health Care', {{$categoriesAmount[8]}}],
             ['Pets', {{$categoriesAmount[9]}}],
             ['Other', {{$categoriesAmount[10]}}],
-            ['Unspent Money', {{$income-$totalExpenses}}]
+            ['Unspent Money', {{0}}]
         ]);
-        @if($income-$totalExpenses<0)
-
         @else
-        // Optional; add a title and set the width and height of the chart
+        var data = google.visualization.arrayToDataTable([
+                ['Category', 'Percentage'],
+                ['Food & Groceries', {{$categoriesAmount[1]}}],
+                ['Emergency Fund', {{$categoriesAmount[2]}}],
+                ['Housing', {{$categoriesAmount[3]}}],
+                ['Utilities', {{$categoriesAmount[4]}}],
+                ['Personal Care', {{$categoriesAmount[5]}}],
+                ['Entertainment', {{$categoriesAmount[6]}}],
+                ['Transport', {{$categoriesAmount[7]}}],
+                ['Health Care', {{$categoriesAmount[8]}}],
+                ['Pets', {{$categoriesAmount[9]}}],
+                ['Other', {{$categoriesAmount[10]}}],
+                ['Unspent Money', {{$income-$totalExpenses}}]
+            ]);
+        @endif
         var options = {
             titleTextStyle: {
                 color: 'black',
@@ -165,7 +179,7 @@
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
-        @endif
+
     }
 </script>
 </div>
