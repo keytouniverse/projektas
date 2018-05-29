@@ -8,14 +8,15 @@
 <style>
     label{
         font-size: 18px;
-        position: relative;
-        left: -350px;
+        position: fixed;
+        left: 350px;
         font-weight: bold;
+        text-align: left;
     }
 
     .selectbigger1{
-        position: relative;
-        left: -340px;
+        position: fixed;
+        left: 540px;
         border-radius: 10px;
         background-color: #81BEF7;
         color: black;
@@ -27,8 +28,8 @@
     }
 
     .selectbigger{
-        position: relative;
-        left: -300px;
+        position: fixed;
+        left: 540px;
         border-radius: 10px;
         background-color: #81BEF7;
         color: black;
@@ -48,8 +49,8 @@
         font-weight: bold;
         width: 100px;
         height: 30px;
-        position: relative;
-        left: -330px;
+        position: fixed;
+        left: 650px;
     }
 
     input[value="Select"]
@@ -60,8 +61,12 @@
         font-weight: bold;
         width: 100px;
         height: 30px;
-        position: relative;
-        left: -290px;
+        position: fixed;
+        left: 650px;
+    }
+    center{
+        position: fixed;
+        left: 50%;
     }
 
 
@@ -71,12 +76,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <div class="card-body">
+                <center>
                     {{--Choose currency in user settings--}}
                     <?php $currencies = array('EUR', 'USD', 'GPB', 'RUB'); ?>
 
                     <form action = "/updateCurrency" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-                    <label>Default currency:</label>
+                    &nbsp <label>  Default currency:</label>
                         <select name="currency" class="selectbigger1">
                             @foreach($currencies as $currency)
                                 @if($currency == $currentcurrency){
@@ -97,7 +103,7 @@
                     {{--Choose income day in user settings--}}
                     <form action = "/updateDay" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-                    <label>Income day:</label>
+                    <label> Income day:</label>
                         <select name="Income_day" class="selectbigger">
                         <?php for ($i = 1; $i <= 31; $i++) : ?>
                             @if($i == $incomeday){
@@ -112,6 +118,7 @@
                         </td>
                         {{--<button type="button" class="btn" >Select</button>--}}
                     </form>
+                    </center>
             </div>
         </div>
     </div>

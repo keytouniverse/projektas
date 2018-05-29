@@ -113,7 +113,7 @@ input[type="submit"] {
         @foreach($users as $user)
             <tr>
 
-                <td>{{$user->id}}</td>
+                <td>{{$sumting}}</td>
                 <td>{{$categoriesNames[$user->categories_id]}}</td>
                 <td>{{$user->amount}}</td>
                 <td>{{$user->created_at}}</td>
